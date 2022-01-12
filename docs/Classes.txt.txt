@@ -1,0 +1,42 @@
+• Club
+	○ Name
+	○ Executive
+	○ Location
+	○ Logo
+	○ Theme
+	○ Kit
+	○ Teams
+	○ Sponsors
+	○ Players Amount
+	○ Coach Amount
+	○ Pitch
+
+• Teams
+	○ Coach
+	○ Players
+	○ Players Amount
+	○ Level
+	○ Tournament Stage
+
+• Coach
+	○ Name
+	○ Age
+	○ Address
+	○ Team
+	○ Game Experience
+
+• Player
+	○ Name
+	○ Age
+	○ Height
+	○ Weight
+	○ Address
+	○ Team
+	○ Game Experience
+	○ Player number
+	○ R - L foot
+
+• Pitch
+	○ Size
+	○ Owner
+	○ Location
