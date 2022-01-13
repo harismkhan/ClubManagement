@@ -11,10 +11,10 @@ namespace ClubManagement.TestApp
     {
         static void Main(string[] args)
         {
-            List<Club> clubs = new List<Club>();
-            List<Coach> coaches = new List<Coach>();
-            List<Player> players = new List<Player>();
-            List<Team> teams = new List<Team>();
+            var clubs = new List<Club>();
+            var coaches = new List<Coach>();
+            var players = new List<Player>();
+            var teams = new List<Team>();
             while (true)
             {
 
@@ -23,26 +23,26 @@ namespace ClubManagement.TestApp
                 Console.WriteLine($"Press 'b' for a coach registration");
                 Console.WriteLine($"Press 'c' for a club registration");
                 Console.WriteLine($"Press 'd' for a team registration");
-                string response = Console.ReadLine();
+                var response = Console.ReadLine();
 
                 if (response == "a")
                 {
                     Console.WriteLine("Register a new Player");
                     Console.WriteLine("First-Name of Player:");
-                    string pFirstName = Console.ReadLine();
+                    string firstName = Console.ReadLine();
                     Console.WriteLine("Last-Name of Player:");
-                    string pLastName = Console.ReadLine();
+                    string lastName = Console.ReadLine();
                     Console.WriteLine("Address of Player:");
-                    string pAddress = Console.ReadLine();
+                    string Address = Console.ReadLine();
                     Console.WriteLine("Club of Player:");
-                    string pClub = Console.ReadLine();
+                    string Club = Console.ReadLine();
                     Player player = new Player();
 
                     player.Id = Guid.NewGuid();
-                    player.FirstName = pFirstName;
-                    player.LastName = pLastName;
-                    player.Address = pAddress;
-                    player.Club = clubs.First(c => c.Name == pClub);
+                    player.FirstName = firstName;
+                    player.LastName = lastName;
+                    player.Address = Address;
+                    player.Club = clubs.First(c => c.Name == Club);
 
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(
@@ -73,7 +73,7 @@ namespace ClubManagement.TestApp
 
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(
-                        $"Overwiev of the new Player: \n" +
+                        $"Overview of the new Coach: \n" +
                         $"Id: . . . . . . . {coach.Id} \n" +
                         $"First-Name: . . . . . . . {coach.FirstName} \n" +
                         $"Last-Name: . . . . . . . {coach.LastName} \n" +
@@ -91,15 +91,21 @@ namespace ClubManagement.TestApp
                     };
                     Console.WriteLine("Name of Club:");
                     club.Name = Console.ReadLine();
-                    Console.WriteLine("Address of Club:");
-                    club.Address = Console.ReadLine();
+                    Console.WriteLine("Street of Club:");
+                    club.Street = Console.ReadLine();
+                    Console.WriteLine("City of Club");
+                    club.City = Console.ReadLine();
+                    Console.WriteLine("Zip Code");
+                    club.Zip = Int32.Parse(Console.ReadLine());
 
                     Console.ForegroundColor= ConsoleColor.Green;
                     Console.WriteLine(
-                        $"Overwiev of the new Player: \n" +
+                        $"Overview of the new Club: \n" +
                         $"Id: . . . . . . . {club.Id} \n" +
                         $"Club-Name: . . . . . . . {club.Name} \n" +
-                        $"Address: . . . . . . . {club.Address} \n");
+                        $"Street: . . . . . . . {club.Street} \n" +
+                        $"City: . . . . . . . . {club.City} \n" +
+                        $"Zip: . . . . . . . . .{club.Zip} \n"); 
 
                     clubs.Add(club);
                 }
@@ -146,7 +152,7 @@ namespace ClubManagement.TestApp
                             }
                             catch
                             {
-                                Console.WriteLine("Cach not found");
+                                Console.WriteLine("Coach not found");
                             }
                         }
                         else
@@ -163,7 +169,7 @@ namespace ClubManagement.TestApp
 
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(
-                        $"Overwiev of the new Player: \n" +
+                        $"Overview of the new Team: \n" +
                         $"Id: . . . . . . . {team.Id} \n" +
                         $"Level: . . . . . . . {team.Level.ToString()} \n" +
                         $"Coaches: . . . . . . . {coachString} \n");

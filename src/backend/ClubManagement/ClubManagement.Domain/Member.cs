@@ -15,10 +15,6 @@ namespace ClubManagement.Domain
         public Club Club {get; set; } 
         public Team Team { get; set; }
 
-        private Club defaultClub = new Club()
-        {
-            Name = "SC Münchenbuchsee",
-        };
         //public Member()
         //{
 

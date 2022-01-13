@@ -1,29 +1,39 @@
 • Club
 	○ Name
-	○ Executive
-	○ Location
-	○ Logo
-	○ Theme
-	○ Kit
+	○ Street
+	○ City
+	○ zIP 
 	○ Teams
-	○ Sponsors
 	○ Players Amount
 	○ Coach Amount
-	○ Pitch
+
+• Pitch
+	○ Size
+	○ Owner
+	○ Location
 
 • Teams
 	○ Coach
 	○ Players
 	○ Players Amount
 	○ Level
-	○ Tournament Stage
+
+• TeamLevel
+	○ Senior
+	○ Active
+	○ JuniorA
+	○ JuniorB
+
+• Member
+	○ FirstName
+	○ LastName
+	○ BirthDate
+	○ Club
+	○ Team 
 
 • Coach
-	○ Name
-	○ Age
-	○ Address
 	○ Team
-	○ Game Experience
+	○ CoachType
 
 • Player
 	○ Name
@@ -35,8 +45,3 @@
 	○ Game Experience
 	○ Player number
 	○ R - L foot
-
-• Pitch
-	○ Size
-	○ Owner
-	○ Location

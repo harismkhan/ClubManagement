@@ -8,7 +8,9 @@ namespace ClubManagement.Domain
 {
     public class Pitch : Base
     {
-        public string Address { get; set; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string Zip { get; set; }
         public Club Club { get; set; }
     }
 }
