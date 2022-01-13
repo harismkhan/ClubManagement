@@ -8,8 +8,8 @@ namespace ClubManagement.Domain
 {
     public enum CoachType
     {
-        CoachMain,
-        CoachAssistant,
-        CoachFitness,   
+        Main,
+        Assistant,
+        Fitness,   
     }
 }

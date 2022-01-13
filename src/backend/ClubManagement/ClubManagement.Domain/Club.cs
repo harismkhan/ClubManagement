@@ -11,7 +11,7 @@ namespace ClubManagement.Domain
         public string Name { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
-        public int Zip { get; set; }
+        public string Zip { get; set; }
         public ICollection<Team> Teams { get; set; }
 
         public Club()

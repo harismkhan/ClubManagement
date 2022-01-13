@@ -1,5 +1,5 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+My application is based on a soccer club in which the whole Data of the club is stored.
 
 # Getting Started
 TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
