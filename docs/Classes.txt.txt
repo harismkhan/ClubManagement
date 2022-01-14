@@ -2,15 +2,16 @@
 	○ Name
 	○ Street
 	○ City
-	○ zIP 
+	○ ZIP 
 	○ Teams
 	○ Players Amount
 	○ Coach Amount
 
 • Pitch
-	○ Size
-	○ Owner
-	○ Location
+	○ Street
+	○ City
+	○ ZIP
+	○ Club
 
 • Teams
 	○ Coach
@@ -42,6 +43,4 @@
 	○ Weight
 	○ Address
 	○ Team
-	○ Game Experience
 	○ Player number
-	○ R - L foot
