@@ -159,8 +159,12 @@ namespace ClubManagement.TestApp
             Console.WriteLine("Club of Coach:");
             var cclub = Console.ReadLine();
             coach.Club = clubs.First(c => c.Name == cclub);
-            Console.WriteLine("Address of Coach");
-            coach.Address = Console.ReadLine();
+            Console.WriteLine("Street of Coach:");
+            coach.Street = Console.ReadLine();
+            Console.WriteLine("City of Coach");
+            coach.City = Console.ReadLine();
+            Console.WriteLine("Zip Code");
+            coach.Zip = (Console.ReadLine());
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(
@@ -169,7 +173,9 @@ namespace ClubManagement.TestApp
                 $"First-Name: . . . . . . . {coach.FirstName} \n" +
                 $"Last-Name: . . . . . . . {coach.LastName} \n" +
                 $"Club: . . . . . . . {coach.Club.Name} \n" +
-                $"Address: . . . . . . . {coach.Address} \n");
+                $"Street: . . . . . . . {coach.Club.Street} \n" +
+                $"City: . . . . . . . {coach.Club.City} \n" +
+                $"Zip: . . . . . . . {coach.Zip} \n");
 
             coaches.Add(coach);
         }
@@ -181,16 +187,22 @@ namespace ClubManagement.TestApp
             string firstName = Console.ReadLine();
             Console.WriteLine("Last-Name of Player:");
             string lastName = Console.ReadLine();
+            Console.WriteLine("Street of Player:");
+            string Street = Console.ReadLine();
+            Console.WriteLine("City of Player:");
+            string City = Console.ReadLine();
             Console.WriteLine("Address of Player:");
-            string Address = Console.ReadLine();
-            Console.WriteLine("Club of Player:");
+            string Zip = Console.ReadLine();
+            Console.WriteLine("Zip Code:");
             string Club = Console.ReadLine();
             Player player = new Player();
 
             player.Id = Guid.NewGuid();
             player.FirstName = firstName;
             player.LastName = lastName;
-            player.Address = Address;
+            player.Street = Street;
+            player.City = City;
+            player.Zip = Zip;
             player.Club = clubs.First(c => c.Name == Club);
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -199,7 +211,9 @@ namespace ClubManagement.TestApp
                 $"Id: . . . . . . . {player.Id} \n" +
                 $"First-Name: . . . . . . . {player.FirstName} \n" +
                 $"Last-Name:  . . . . . . . {player.LastName} \n" +
-                $"Address:  . . . . . . . . {player.Address}\n" +
+                $"Street:  . . . . . . . . {player.Street}\n" +
+                $"City:  . . . . . . . . {player.City}\n" +
+                $"Zip:  . . . . . . . . {player.Zip}\n" +
                 $"Club:  . . . . . . . . {player.Club.Name}");
 
             players.Add(player);
