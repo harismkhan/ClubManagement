@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClubManagement.Domain
+namespace ClubManagement.Domain.Enums
 {
-    public enum CoachType
+    public enum TeamLevel
     {
-        Main,
-        Assistant,
-        Fitness,   
+        Senior,
+        Active,
+        JuniorA,
+        JuniorB,
     }
 }
