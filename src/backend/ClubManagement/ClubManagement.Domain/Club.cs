@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClubManagement.Domain
 {
-    public class Club : Base
+    public class Club : BaseEntity
     {
-        public string Name { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string Zip { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Street { get; set; }
+        public virtual string City { get; set; }
+        public virtual string Zip { get; set; }
         public ICollection<Team> Teams { get; set; }
 
         public Club()

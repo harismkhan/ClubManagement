@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClubManagement.Domain
 {
-    public class Team : Base
+    public class Team : BaseEntity
     {
         public ICollection<Coach> Coaches { get; set; }
         public ICollection<Player> Players { get; set; }

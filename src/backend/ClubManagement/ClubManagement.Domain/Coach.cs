@@ -8,6 +8,7 @@ namespace ClubManagement.Domain
 {
     public class Coach : Member
     { 
-        public CoachType Type { get; set; }
+        public virtual CoachType Type { get; set; }
+        public Guid CoachTypeId { get; set; }
     }
 }

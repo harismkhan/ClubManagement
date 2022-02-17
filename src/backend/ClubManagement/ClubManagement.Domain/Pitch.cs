@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClubManagement.Domain
 {
-    public class Pitch : Base
+    public class Pitch : BaseEntity
     {
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string Zip { get; set; }
-        public Club Club { get; set; }
+        public virtual string Street { get; set; }
+        public virtual string City { get; set; }
+        public virtual string Zip { get; set; }
+        public virtual Club Club { get; set; }
     }
 }

@@ -19,24 +19,24 @@ namespace ClubManagement.TestApp
             {
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($"Press 'a' for a player registration");
+                Console.WriteLine($"Press 'a' for a club registration");
                 Console.WriteLine($"Press 'b' for a coach registration");
-                Console.WriteLine($"Press 'c' for a club registration");
-                Console.WriteLine($"Press 'd' for a team registration");
+                Console.WriteLine($"Press 'c' for a team registration");
+                Console.WriteLine($"Press 'd' for a player registration");
                 var response = Console.ReadLine();
                 switch (response)
                 {
                     case "a":
-                        RegisterPlayer(clubs, players);
+                        RegisterClub(clubs);
                         break;
                     case "b":
                         RegisterCoach(clubs, coaches);
                         break;
                     case "c":
-                        RegisterClub(clubs);
+                        RegisterTeam(teams, coaches);
                         break;
                     case "d":
-                        RegisterTeam(teams, coaches);
+                        RegisterPlayer(clubs, players);
                         break;
                     default:
                         Console.WriteLine("command not found");
@@ -191,9 +191,9 @@ namespace ClubManagement.TestApp
             string Street = Console.ReadLine();
             Console.WriteLine("City of Player:");
             string City = Console.ReadLine();
-            Console.WriteLine("Address of Player:");
-            string Zip = Console.ReadLine();
             Console.WriteLine("Zip Code:");
+            string Zip = Console.ReadLine();
+            Console.WriteLine("Club of Player:");
             string Club = Console.ReadLine();
             Player player = new Player();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClubManagement.Domain
 {
-    public class Base
+    public class BaseEntity
     {
         public Guid Id { get; set; }
     }
