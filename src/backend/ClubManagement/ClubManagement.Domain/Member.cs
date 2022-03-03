@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClubManagement.Domain
 {
-    public class Member : BaseEntity
+    public abstract class Member : BaseEntity
     {
         public  string FirstName { get; set; }
         public string LastName { get; set; }

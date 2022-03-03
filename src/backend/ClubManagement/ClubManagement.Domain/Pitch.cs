@@ -12,5 +12,6 @@ namespace ClubManagement.Domain
         public virtual string City { get; set; }
         public virtual string Zip { get; set; }
         public virtual Club Club { get; set; }
+        public Guid ClubId { get; set; }
     }
 }

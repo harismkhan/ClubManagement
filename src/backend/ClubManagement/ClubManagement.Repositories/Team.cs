@@ -1,6 +1,6 @@
 ﻿namespace ClubManagement.Repositories
 {
-    public class Class1
+    public class Team
     {
 
     }

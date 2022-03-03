@@ -10,6 +10,6 @@ namespace ClubManagement.Domain
     {
         Main,
         Assistant,
-        Fitness,   
+        Fitness,
     }
 }
