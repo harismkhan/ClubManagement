@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClubManagement.Backbone;
 
 namespace ClubManagement.Domain
 {
-    public class Pitch : BaseEntity
+    public class Pitch : Entity
     {
         public virtual string Street { get; set; }
         public virtual string City { get; set; }

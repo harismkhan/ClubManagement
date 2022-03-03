@@ -1,4 +1,4 @@
-﻿namespace isolutions.EntityFramework.Code.First.Backbone.Data
+﻿namespace ClubManagement.Backbone
 {
     public interface IEntity
     {

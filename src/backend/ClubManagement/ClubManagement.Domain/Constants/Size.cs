@@ -1,4 +1,4 @@
-﻿namespace ClubManagemnt.Domain.Models.Constants
+﻿namespace ClubManagement.Domain.Models.Constants
 {  
     public static class Size
     {

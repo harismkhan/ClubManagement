@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClubManagement.Database\ClubManagement.Database.csproj" />
     <ProjectReference Include="..\ClubManagement.Domain\ClubManagement.Domain.csproj" />
+    <ProjectReference Include="..\ClubManagement.Repositories\ClubManagement.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

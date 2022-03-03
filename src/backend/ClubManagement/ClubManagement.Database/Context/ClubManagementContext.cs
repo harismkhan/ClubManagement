@@ -1,7 +1,7 @@
 ﻿using ClubManagement.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ClubManagemnt.Domain.Models.Constants;
+using ClubManagement.Domain.Models.Constants;
 
 
 namespace ClubManagement.Contexts

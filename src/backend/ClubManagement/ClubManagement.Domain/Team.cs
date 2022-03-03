@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClubManagement.Backbone;
+
 
 namespace ClubManagement.Domain
 {
-    public class Team : BaseEntity
+    public class Team : Entity
     {
         public TeamLevel Level { get; set; }
         public virtual Club Club { get; set; }

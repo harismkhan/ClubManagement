@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace isolutions.EntityFramework.Code.First.Backbone.Data
+namespace ClubManagement.Backbone
 {
     public abstract class Entity<TId>
     {
