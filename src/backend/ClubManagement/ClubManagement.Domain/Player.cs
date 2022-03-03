@@ -9,8 +9,8 @@ namespace ClubManagement.Domain
     public class Player : Member
     {
 
-        public virtual decimal Height { get; set; }
-        public virtual decimal Weight { get; set; }
-        public virtual int PlayerNumber { get; set; }
+        public decimal Height { get; set; }
+        public decimal Weight { get; set; }
+        public int PlayerNumber { get; set; }
     }
 }

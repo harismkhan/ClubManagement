@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Domain", "Cl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.TestApp", "ClubManagement.TestApp\ClubManagement.TestApp.csproj", "{43751638-3661-49CB-B1F2-E7B8C679C4E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubManagement.Database", "ClubManagement.Database\ClubManagement.Database.csproj", "{54D15BF3-52C5-4E11-A819-45E3E4B5601E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Database", "ClubManagement.Database\ClubManagement.Database.csproj", "{54D15BF3-52C5-4E11-A819-45E3E4B5601E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubManagement.Repositories", "ClubManagement.Repositories\ClubManagement.Repositories.csproj", "{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Repositories", "ClubManagement.Repositories\ClubManagement.Repositories.csproj", "{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backbone", "Backbone\Backbone.csproj", "{E6741100-74DD-4658-8690-C2F970FAAC8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

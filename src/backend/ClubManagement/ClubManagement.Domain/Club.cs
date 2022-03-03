@@ -8,24 +8,11 @@ namespace ClubManagement.Domain
 {
     public class Club : BaseEntity
     {
-        public virtual string Name { get; set; }
-        public virtual string Street { get; set; }
-        public virtual string City { get; set; }
-        public virtual string Zip { get; set; }
-        public ICollection<Team> Teams { get; set; }
-
-        public Club()
-        {
-            Teams = new List<Team>();
-        }
-
-        public int GetPlayersAmount()
-        {
-            return Teams.SelectMany(t => t.Players).Count();
-        }
-        public int GetCoachesAmount()
-        {
-            return Teams.SelectMany(t => t.Coaches).Count();
-        }
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string Zip { get; set; }
+        public virtual ICollection<Member> Members { get; set; } = new List<Member>();
+        public virtual ICollection<Team> Teams { get; set; } = new List<Team>();
     }
 }
