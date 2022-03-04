@@ -1,6 +1,6 @@
 ﻿using ClubManagement.Domain;
 
-namespace ClubManagement.TestApp
+namespace ClubManagement.TestApp.Interfaces
 {
     public interface IPitchManagerService : IClubManagementApplicationService, IManagerService<Pitch>
     {

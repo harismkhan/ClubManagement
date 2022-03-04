@@ -13,7 +13,7 @@ namespace ClubManagement.Backbone
             Id = id;
         }
 
-        public virtual TId Id { get; protected set; }
+        public virtual TId Id { get; set; }
 
         public override bool Equals(object? obj)
         {
@@ -76,6 +76,6 @@ namespace ClubManagement.Backbone
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public override Guid Id { get; protected set; } = Guid.NewGuid();
+        public override Guid Id { get; set; } = Guid.NewGuid();
     }
 }

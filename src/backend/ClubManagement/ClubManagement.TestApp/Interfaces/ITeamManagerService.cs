@@ -1,7 +1,6 @@
 ﻿using ClubManagement.Domain;
-using ClubManagement.TestApp;
 
-namespace isolutions.EntityFramework.Code.First.FlightBookingApplication.Interfaces
+namespace ClubManagement.TestApp.Interfaces
 {
     public interface ITeamManagerService : IClubManagementApplicationService, IManagerService<Team>
     {
