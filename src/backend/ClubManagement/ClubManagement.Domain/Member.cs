@@ -16,6 +16,5 @@ namespace ClubManagement.Domain
         public virtual Team Team { get; set; }
         public Guid TeamId { get; set; }
 
-
     }
 }
