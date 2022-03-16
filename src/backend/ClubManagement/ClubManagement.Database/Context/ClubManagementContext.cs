@@ -72,7 +72,7 @@ namespace ClubManagement.Contexts
                 .HasOne(team => team.Club)
                 .WithMany(club => club.Teams)
                 .HasForeignKey(team => team.ClubId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
             builder
                 .HasMany(club => club.Players)
                 .WithOne(player => player.Team);
@@ -109,7 +109,7 @@ namespace ClubManagement.Contexts
                 .HasOne(coach => coach.Team)
                 .WithMany(team => team.Coaches)
                 .HasForeignKey(coach => coach.TeamId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
         }
         private void ConfigurePlayer(EntityTypeBuilder<Player> builder)
         {
@@ -139,7 +139,7 @@ namespace ClubManagement.Contexts
                 .HasOne(player => player.Team)
                 .WithMany(team => team.Players)
                 .HasForeignKey(player => player.TeamId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         private void ConfigurePitch(EntityTypeBuilder<Pitch> builder)
