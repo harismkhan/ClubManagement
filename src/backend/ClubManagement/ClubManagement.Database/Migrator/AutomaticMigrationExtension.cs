@@ -9,10 +9,10 @@ namespace isolutions.EntityFramework.Code.First.Database.Migrator
     {
         public static IHost ApplyMigrations(this IHost host)
         {
-            var flightBookingContext = host.Services.GetRequiredService<ClubManagementContext>();
-            if (flightBookingContext.Database.GetPendingMigrations().Any())
+            var clubManagementContext = host.Services.GetRequiredService<ClubManagementContext>();
+            if (clubManagementContext.Database.GetPendingMigrations().Any())
             {
-                flightBookingContext.Database.Migrate();
+                clubManagementContext.Database.Migrate();
             }
 
             return host;

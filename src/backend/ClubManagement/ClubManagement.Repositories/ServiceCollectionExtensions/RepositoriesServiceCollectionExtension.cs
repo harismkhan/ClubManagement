@@ -1,5 +1,4 @@
-﻿
-using ClubManagement.Repositories;
+﻿using ClubManagement.Repositories;
 using ClubManagement.Repositories.Interfaces;
 
 namespace Microsoft.Extensions.DependencyInjection

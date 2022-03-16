@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ClubManagement.Domain.Models.Constants;
 
-
 namespace ClubManagement.Contexts
 {
     public class ClubManagementContext : DbContext
@@ -22,7 +21,6 @@ namespace ClubManagement.Contexts
         public DbSet<Coach> Coaches { get; }
         public DbSet<Player> Players { get; }
         public DbSet<Pitch> Pitches { get; }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,10 +51,17 @@ namespace ClubManagement.Contexts
                 .Property(club => club.Zip)
                 .HasMaxLength(Size.StringMediumSize);
             builder
+                .HasMany(club => club.Coaches)
+                .WithOne(coach => coach.Club);
+            builder
+                .HasMany(club => club.Pitches)
+                .WithOne(pitch => pitch.Club);
+            builder
+                .HasMany(club => club.Players)
+                .WithOne(player => player.Club);
+            builder
                 .HasMany(club => club.Teams)
-                .WithOne(team => team.Club)
-                .HasForeignKey(team => team.ClubId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .WithOne(team => team.Club);
         }
 
         private void ConfigureTeam(EntityTypeBuilder<Team> builder)
@@ -64,14 +69,16 @@ namespace ClubManagement.Contexts
             builder
                 .ToTable(nameof(Team) + "s");
             builder
-                .Property(team => team.Level)
-                .HasMaxLength(Size.StringMediumSize);
-            builder
                 .HasOne(team => team.Club)
                 .WithMany(club => club.Teams)
                 .HasForeignKey(team => team.ClubId)
                 .OnDelete(DeleteBehavior.Cascade);
-            
+            builder
+                .HasMany(club => club.Players)
+                .WithOne(player => player.Team);
+            builder
+                .HasMany(club => club.Coaches)
+                .WithOne(coach => coach.Team);
         }
 
         private void ConfigureCoach(EntityTypeBuilder<Coach> builder)
@@ -85,17 +92,14 @@ namespace ClubManagement.Contexts
                 .Property(coach => coach.LastName)
                 .HasMaxLength(Size.StringMediumSize);
             builder
-                .Property(coach => coach.BirthDate)
-                .HasMaxLength(Size.StringMediumSize);
-            builder
                 .Property(coach => coach.Street)
                 .HasMaxLength(Size.StringMediumSize);
             builder
                 .Property(coach => coach.City)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringSmallSize);
             builder
                 .Property(coach => coach.Zip)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringVerySmallSize);
             builder
                 .HasOne(coach => coach.Club)
                 .WithMany(club => club.Coaches)
@@ -106,9 +110,6 @@ namespace ClubManagement.Contexts
                 .WithMany(team => team.Coaches)
                 .HasForeignKey(coach => coach.TeamId)
                 .OnDelete(DeleteBehavior.Cascade);
-            builder
-                .Property(coach => coach.Type)
-                .HasMaxLength(Size.StringMediumSmallSize);
         }
         private void ConfigurePlayer(EntityTypeBuilder<Player> builder)
         {
@@ -121,17 +122,14 @@ namespace ClubManagement.Contexts
                 .Property(player => player.LastName)
                 .HasMaxLength(Size.StringMediumSize);
             builder
-                .Property(player => player.BirthDate)
-                .HasMaxLength(Size.StringMediumSize);
-            builder
                 .Property(player => player.Street)
                 .HasMaxLength(Size.StringMediumSize);
             builder
                 .Property(player => player.City)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringSmallSize);
             builder
                 .Property(player => player.Zip)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringVerySmallSize);
             builder
                 .HasOne(player => player.Club)
                 .WithMany(club => club.Players)
@@ -142,15 +140,6 @@ namespace ClubManagement.Contexts
                 .WithMany(team => team.Players)
                 .HasForeignKey(player => player.TeamId)
                 .OnDelete(DeleteBehavior.Cascade);
-            builder
-                .Property(player => player.Height)
-                .HasMaxLength(Size.StringMediumSmallSize);
-            builder
-                .Property(player => player.Weight)
-                .HasMaxLength(Size.StringMediumSmallSize);
-            builder
-                .Property(player => player.PlayerNumber)
-                .HasMaxLength(Size.StringMediumSmallSize);
         }
 
         private void ConfigurePitch(EntityTypeBuilder<Pitch> builder)
@@ -159,21 +148,18 @@ namespace ClubManagement.Contexts
                 .ToTable(nameof(Pitch) + "es");
             builder
                 .Property(pitch => pitch.Street)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringMediumSmallSize);
             builder
                 .Property(pitch => pitch.City)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringSmallSize);
             builder
                 .Property(pitch => pitch.Zip)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringVerySmallSize);
             builder
                 .HasOne(pitch => pitch.Club)
                 .WithMany(club => club.Pitches)
                 .HasForeignKey(pitch => pitch.ClubId)
                 .OnDelete(DeleteBehavior.Cascade);
-
         }
-
     }
-    
 }

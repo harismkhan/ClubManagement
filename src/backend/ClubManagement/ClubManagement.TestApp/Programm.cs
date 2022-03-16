@@ -213,15 +213,16 @@ namespace ClubManagement.TestApp
             string Zip = Console.ReadLine();
             Console.WriteLine("Club of Player:");
             string Club = Console.ReadLine();
-            Player player = new Player();
-
-            player.Id = Guid.NewGuid();
-            player.FirstName = firstName;
-            player.LastName = lastName;
-            player.Street = Street;
-            player.City = City;
-            player.Zip = Zip;
-            player.Club = clubs.First(c => c.Name == Club);
+            Player player = new Player
+            {
+                Id = Guid.NewGuid(),
+                FirstName = firstName,
+                LastName = lastName,
+                Street = Street,
+                City = City,
+                Zip = Zip,
+                Club = clubs.First(c => c.Name == Club)
+            };
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(
