@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace isolutions.EntityFramework.Code.First.Database.Migrator
+namespace ClubManagement.Database.Migrator
 {
     public static class AutomaticMigrationExtension
     {

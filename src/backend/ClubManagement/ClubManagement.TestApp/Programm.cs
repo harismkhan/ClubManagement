@@ -1,5 +1,5 @@
 ﻿using ClubManagement.Domain;
-using isolutions.EntityFramework.Code.First.Database.Migrator;
+using ClubManagement.Database.Migrator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using ClubManagement.Domain.Enums;
