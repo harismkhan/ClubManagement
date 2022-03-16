@@ -1,12 +1,12 @@
-﻿using ClubManagement.Domain;
+﻿using ClubManagement.Contexts;
+using ClubManagement.Domain;
 using ClubManagement.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
-namespace ClubManagement.Repositories
+namespace ClubManagement.Repositories.Repositories
 {
     public class ClubRepository : BaseRepository<Club>, IClubRepository
     {
-        public ClubRepository(DbContext context) : base(context)
+        public ClubRepository(ClubManagementContext context) : base(context)
         {
         }
     }

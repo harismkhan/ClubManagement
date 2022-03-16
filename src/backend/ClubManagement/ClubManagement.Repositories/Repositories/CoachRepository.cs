@@ -1,12 +1,12 @@
-﻿using ClubManagement.Domain;
+﻿using ClubManagement.Contexts;
+using ClubManagement.Domain;
 using ClubManagement.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
-namespace ClubManagement.Repositories
+namespace ClubManagement.Repositories.Repositories
 {
     public class CoachRepository : BaseRepository<Coach>, ICoachRepository
     {
-        public CoachRepository(DbContext context) : base(context)
+        public CoachRepository(ClubManagementContext context) : base(context)
         {
         }
     }

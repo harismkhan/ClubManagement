@@ -1,12 +1,12 @@
-﻿using ClubManagement.Domain;
+﻿using ClubManagement.Contexts;
+using ClubManagement.Domain;
 using ClubManagement.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
 
-namespace ClubManagement.Repositories
+namespace ClubManagement.Repositories.Repositories
 {
     public class PlayerRepository : BaseRepository<Player>, IPlayerRepository
     {
-        public PlayerRepository(DbContext context) : base(context)
+        public PlayerRepository(ClubManagementContext context) : base(context)
         {
         }
     }

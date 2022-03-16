@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Backbone\Backbone.csproj" />
+    <ProjectReference Include="..\ClubManagement.Database\ClubManagement.Database.csproj" />
     <ProjectReference Include="..\ClubManagement.Domain\ClubManagement.Domain.csproj" />
   </ItemGroup>
 

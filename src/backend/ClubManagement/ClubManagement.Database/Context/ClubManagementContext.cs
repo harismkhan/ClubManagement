@@ -12,7 +12,7 @@ namespace ClubManagement.Contexts
             Clubs = Set<Club>();
             Teams = Set<Team>();
             Coaches = Set<Coach>();
-            Players = Set<Player>();   
+            Players = Set<Player>();
             Pitches = Set<Pitch>();
         }
 
@@ -49,7 +49,7 @@ namespace ClubManagement.Contexts
                 .HasMaxLength(Size.StringMediumSize);
             builder
                 .Property(club => club.Zip)
-                .HasMaxLength(Size.StringMediumSize);
+                .HasMaxLength(Size.StringVerySmallSize);
             builder
                 .HasMany(club => club.Coaches)
                 .WithOne(coach => coach.Club);

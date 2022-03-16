@@ -1,7 +1,6 @@
 ﻿using ClubManagement.Domain;
-using ClubManagement.Repositories.Interfaces;
 
-namespace ClubManagement.Repositories
+namespace ClubManagement.Repositories.Interfaces
 {
     public interface IPitchRepository : IBaseRepository<Pitch>
     {

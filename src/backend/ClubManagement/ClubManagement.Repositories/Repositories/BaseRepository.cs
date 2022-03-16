@@ -1,7 +1,8 @@
 ﻿using ClubManagement.Backbone;
+using ClubManagement.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClubManagement.Repositories.Interfaces
+namespace ClubManagement.Repositories.Repositories
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {

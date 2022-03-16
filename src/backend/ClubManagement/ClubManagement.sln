@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Database", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Repositories", "ClubManagement.Repositories\ClubManagement.Repositories.csproj", "{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backbone", "Backbone\Backbone.csproj", "{E6741100-74DD-4658-8690-C2F970FAAC8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{88F7A295-356D-4F28-8510-0F39678E58BB}"
@@ -45,10 +43,6 @@ Global
 		{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65806EEB-D39D-49AB-9B3B-F48E4CC79D3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
