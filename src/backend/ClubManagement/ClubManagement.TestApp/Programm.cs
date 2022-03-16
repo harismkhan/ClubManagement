@@ -2,6 +2,7 @@
 using isolutions.EntityFramework.Code.First.Database.Migrator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using ClubManagement.Domain.Enums;
 
 namespace ClubManagement.TestApp
 {
