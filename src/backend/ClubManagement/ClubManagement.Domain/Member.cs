@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClubManagement.Backbone;
 
 namespace ClubManagement.Domain
 {
-    public abstract class Member : Base
+    public abstract class Member : Entity
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public  string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string Zip { get; set; }
-        public Club Club {get; set; }
-        public Team Team { get; set; }
+        public string Street { get; set; } = string.Empty;
+        public string City { get; set; } = string.Empty;
+        public string Zip { get; set; } = string.Empty;
+        public virtual Club? Club {get; set; }
+        public Guid? ClubId { get; set; }
+        public virtual Team? Team { get; set; }
+        public Guid? TeamId { get; set; }
 
     }
 }

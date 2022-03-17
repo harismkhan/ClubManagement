@@ -1,28 +1,14 @@
+﻿using ClubManagement.Backbone;
 ﻿using ClubManagement.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClubManagement.Domain
 {
-    public class Team : Base
+    public class Team : Entity
     {
-        public ICollection<Coach> Coaches { get; set; }
-        public ICollection<Player> Players { get; set; }
-
         public TeamLevel Level { get; set; }
-
-        public Team(TeamLevel level)
-        {
-            Level = level;
-            Coaches = new List<Coach>();
-            Players = new List<Player>();
-        }
-
-        public Team()
-        {
-        }
+        public virtual Club? Club { get; set; }
+        public Guid? ClubId { get; set; }
+        public virtual ICollection<Coach> Coaches { get; set; } = new List<Coach>();
+        public virtual ICollection<Player> Players { get; set; } = new List<Player>();
     }
 }

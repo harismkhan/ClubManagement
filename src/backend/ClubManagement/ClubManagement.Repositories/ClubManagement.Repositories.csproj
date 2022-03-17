@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Backbone\Backbone.csproj" />
+    <ProjectReference Include="..\ClubManagement.Database\ClubManagement.Database.csproj" />
+    <ProjectReference Include="..\ClubManagement.Domain\ClubManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClubManagement.Domain
+﻿namespace ClubManagement.Domain
 {
     public class Player : Member
     {
-
-        public decimal Height { get; set; }
-        public decimal Weight { get; set; }
-        public int PlayerNumber { get; set; }
+        public decimal Height { get; set; } = 0;
+        public decimal Weight { get; set; } = 0;
+        public int PlayerNumber { get; set; } = 0;
     }
 }
