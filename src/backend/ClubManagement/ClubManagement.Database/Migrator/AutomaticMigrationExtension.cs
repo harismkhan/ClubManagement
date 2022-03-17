@@ -14,7 +14,7 @@ namespace ClubManagement.Database.Migrator
             {
                 clubManagementContext.Database.Migrate();
             }
-
+ 
             return host;
         }
     }

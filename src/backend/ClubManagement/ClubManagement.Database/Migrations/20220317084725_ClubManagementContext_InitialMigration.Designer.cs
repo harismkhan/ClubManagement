@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClubManagement.Database.Migrations
 {
     [DbContext(typeof(ClubManagementContext))]
-    [Migration("20220316153828_ClubManagementContext_InitialMigration")]
+    [Migration("20220317084725_ClubManagementContext_InitialMigration")]
     partial class ClubManagementContext_InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
