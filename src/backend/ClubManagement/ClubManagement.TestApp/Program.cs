@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace ClubManagement.TestApp
 {
-    internal class Programm
+    internal class Program
     {
         static void Main(string[] args)
         {
