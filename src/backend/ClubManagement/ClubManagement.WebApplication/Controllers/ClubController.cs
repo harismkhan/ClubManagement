@@ -1,3 +1,4 @@
+using ClubManagement.Domain.Models;
 using ClubManagement.Services.Interfaces;
 using ClubManagement.Services.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -38,6 +39,86 @@ namespace ClubManagement.WebApplication.Controllers
             }
 
             return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
+        {
+            IEnumerable<ClubViewModel> result;
+
+            try
+            {
+                result = await clubService.GetAll();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                return BadRequest();
+            }
+            return Ok(result);
+        }
+
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult?> Delete(Guid id)
+        {
+
+            try
+            {
+                await clubService.Delete(id);
+            }
+
+            catch (ArgumentException ex)
+            {
+                logger.LogError(ex.Message);
+                return NotFound();
+            }
+
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public void Create([FromBody]ClubCreateModel clubCreate)
+        {
+            ClubViewModel result;
+             
+            try
+            {
+                clubService.Create(clubCreate);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                //return BadRequest();
+            }
+
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Update(ClubUpdateModel clubUpdate, Guid id)
+        {
+            try
+            {
+                await clubService.Update(clubUpdate);
+            }
+            catch (ArgumentException ex)
+            {
+                logger.LogError(ex.Message);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
+            return Ok();
         }
     }
 }
