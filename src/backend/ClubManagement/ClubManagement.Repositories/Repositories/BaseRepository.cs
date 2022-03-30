@@ -37,5 +37,6 @@ namespace ClubManagement.Repositories.Repositories
         public async Task<bool> ExistsByIdAsync(Guid id) => await GetQuery.AsNoTracking().AnyAsync(f => f.Id == id);
 
         public async Task<bool> AnyAsync() => await GetQuery.AsNoTracking().AnyAsync();
+        public async Task SaveContextChanges() => await db.SaveChangesAsync();
     }
 }

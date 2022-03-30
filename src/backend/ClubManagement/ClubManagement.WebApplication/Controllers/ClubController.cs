@@ -84,20 +84,20 @@ namespace ClubManagement.WebApplication.Controllers
         }
 
         [HttpPost]
-        public void Create([FromBody]ClubCreateModel clubCreate)
+        public async Task Create([FromBody] ClubCreateModel clubCreate)
         {
-            ClubViewModel result;
-             
+            ClubViewModel? result;
+
             try
             {
-                clubService.Create(clubCreate);
+                await clubService.Create(clubCreate);
             }
             catch (Exception ex)
             {
                 logger.LogError(ex.Message);
-                //return BadRequest();
+                BadRequest();
             }
-
+            Ok();
         }
 
         [HttpPut]

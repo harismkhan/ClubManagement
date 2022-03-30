@@ -55,9 +55,10 @@ namespace ClubManagement.Services
             }
 
             clubRepository.Remove(clubToDelete);
+            await clubRepository.SaveContextChanges();
         }
 
-        public void Create(ClubCreateModel createModel)
+        public async Task Create(ClubCreateModel createModel)
         {
             var club = new Club
             {
@@ -68,6 +69,7 @@ namespace ClubManagement.Services
             };
 
             clubRepository.Add(club);
+            await clubRepository.SaveContextChanges();
         }
 
         public async Task Update(ClubUpdateModel updateModel)
@@ -84,9 +86,8 @@ namespace ClubManagement.Services
             clubToUpdate.Street = updateModel.Street;
             clubToUpdate.Zip = updateModel.Zip;
 
-            
-
             clubRepository.Update(clubToUpdate);
+            await clubRepository.SaveContextChanges();
         }
     }
 }
