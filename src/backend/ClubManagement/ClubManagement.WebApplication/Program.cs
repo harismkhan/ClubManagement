@@ -46,4 +46,9 @@ void ConfigureService(IServiceCollection services)
     services.AddScoped<ICoachRepository, CoachRepository>();
 
     services.AddScoped<IClubService, ClubService>();
+    services.AddScoped<ITeamService, TeamService>();
+    services.AddScoped<ICoachService, CoachService>();
+    services.AddScoped<IPlayerService, PlayerService>();
+    services.AddScoped<IPitchService, PitchService>();
+
 }

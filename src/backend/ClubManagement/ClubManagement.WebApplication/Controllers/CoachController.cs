@@ -1,30 +1,30 @@
 using ClubManagement.Domain.Models;
+using ClubManagement.Domain.ViewModels;
 using ClubManagement.Services.Interfaces;
-using ClubManagement.Services.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClubManagement.WebApplication.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ClubController : ControllerBase
+    public class CoachController : ControllerBase
     {
-        private readonly ILogger<ClubController> logger;
-        private readonly IClubService clubService;
+        private readonly ILogger<CoachController> logger;
+        private readonly ICoachService coachService;
 
-        public ClubController(ILogger<ClubController> logger, IClubService clubService)
+        public CoachController(ILogger<CoachController> logger, ICoachService coachService)
         {
             this.logger = logger;
-            this.clubService = clubService;
+            this.coachService = coachService;
         }
 
         [HttpPost]
-        public async Task Create([FromBody] ClubCreateModel clubCreate)
+        public async Task Create([FromBody] CoachCreateModel coachCreate)
         {
 
             try
             {
-                await clubService.Create(clubCreate);
+                await coachService.Create(coachCreate);
             }
             catch (Exception ex)
             {
@@ -35,11 +35,11 @@ namespace ClubManagement.WebApplication.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(ClubUpdateModel clubUpdate, Guid id)
+        public async Task<ActionResult> Update(CoachUpdateModel coachUpdate, Guid id)
         {
             try
             {
-                await clubService.Update(clubUpdate);
+                await coachService.Update(coachUpdate);
             }
             catch (ArgumentException ex)
             {
@@ -58,11 +58,11 @@ namespace ClubManagement.WebApplication.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(Guid id)
         {
-            ClubViewModel result;
+            CoachViewModel result;
 
             try
             {
-                result = await clubService.GetById(id);
+                result = await coachService.GetById(id);
             }
             catch (Exception ex)
             {
@@ -81,11 +81,11 @@ namespace ClubManagement.WebApplication.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
-            IEnumerable<ClubViewModel> result;
+            IEnumerable<CoachViewModel> result;
 
             try
             {
-                result = await clubService.GetAll();
+                result = await coachService.GetAll();
             }
             catch (Exception ex)
             {
@@ -102,7 +102,7 @@ namespace ClubManagement.WebApplication.Controllers
 
             try
             {
-                await clubService.Delete(id);
+                await coachService.Delete(id);
             }
 
             catch (ArgumentException ex)

@@ -15,6 +15,38 @@ namespace ClubManagement.Services
             this.clubRepository = clubRepository;
         }
 
+        public async Task Create(ClubCreateModel createModel)
+        {
+            var club = new Club
+            {
+                Name = createModel.Name,
+                Street = createModel.Street,
+                City = createModel.City,
+                Zip = createModel.Zip,
+            };
+
+            clubRepository.Add(club);
+            await clubRepository.SaveContextChanges();
+        }
+
+        public async Task Update(ClubUpdateModel updateModel)
+        {
+            var clubToUpdate = await clubRepository.GetAsync(updateModel.Id);
+
+            if (clubToUpdate == null)
+            {
+                throw new ArgumentException();
+            }
+
+            clubToUpdate.Name = updateModel.Name;
+            clubToUpdate.City = updateModel.City;
+            clubToUpdate.Street = updateModel.Street;
+            clubToUpdate.Zip = updateModel.Zip;
+
+            clubRepository.Update(clubToUpdate);
+            await clubRepository.SaveContextChanges();
+        }
+
         public async Task<ClubViewModel?> GetById(Guid id)
         {
             var club = await clubRepository.GetAsync(id);
@@ -58,36 +90,5 @@ namespace ClubManagement.Services
             await clubRepository.SaveContextChanges();
         }
 
-        public async Task Create(ClubCreateModel createModel)
-        {
-            var club = new Club
-            {
-                Name = createModel.Name,
-                Street = createModel.Street,
-                City = createModel.City,
-                Zip = createModel.Zip,
-            };
-
-            clubRepository.Add(club);
-            await clubRepository.SaveContextChanges();
-        }
-
-        public async Task Update(ClubUpdateModel updateModel)
-        {
-            var clubToUpdate = await clubRepository.GetAsync(updateModel.Id);
-
-            if (clubToUpdate == null)
-            {
-                throw new ArgumentException();
-            }
-
-            clubToUpdate.Name = updateModel.Name;
-            clubToUpdate.City = updateModel.City;
-            clubToUpdate.Street = updateModel.Street;
-            clubToUpdate.Zip = updateModel.Zip;
-
-            clubRepository.Update(clubToUpdate);
-            await clubRepository.SaveContextChanges();
-        }
     }
 }

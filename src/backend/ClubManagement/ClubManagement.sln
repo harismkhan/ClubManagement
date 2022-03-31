@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.WebApplication", "ClubManagement.WebApplication\ClubManagement.WebApplication.csproj", "{B1952EC4-E195-4458-AD4D-9C075F0EB13A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
