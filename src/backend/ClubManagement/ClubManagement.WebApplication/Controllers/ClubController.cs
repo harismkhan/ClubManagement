@@ -20,7 +20,7 @@ namespace ClubManagement.WebApplication.Controllers
         }
 
         [HttpPost]
-        public async Task Create([FromBody] ClubCreateModel clubCreate)
+        public async Task<ActionResult> Create([FromBody] ClubCreateModel clubCreate)
         {
 
             try
@@ -30,9 +30,9 @@ namespace ClubManagement.WebApplication.Controllers
             catch (Exception ex)
             {
                 logger.LogError(ex.Message);
-                BadRequest();
+                return BadRequest();
             }
-            Ok();
+            return Ok();
         }
 
         [HttpPut]

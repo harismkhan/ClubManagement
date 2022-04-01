@@ -14,7 +14,6 @@ namespace ClubManagement.Database.Context
             Coaches = Set<Coach>();
             Players = Set<Player>();
             Pitches = Set<Pitch>();
-            Persons = Set<Person>();
         }
 
         public DbSet<Club> Clubs { get; }
@@ -22,7 +21,6 @@ namespace ClubManagement.Database.Context
         public DbSet<Coach> Coaches { get; }
         public DbSet<Player> Players { get; }
         public DbSet<Pitch> Pitches { get; }
-        public DbSet<Person> Persons { get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,7 +29,6 @@ namespace ClubManagement.Database.Context
             ConfigureCoach(modelBuilder.Entity<Coach>());
             ConfigurePlayer(modelBuilder.Entity<Player>());
             ConfigurePitch(modelBuilder.Entity<Pitch>());
-            ConfigurePerson(modelBuilder.Entity<Person>());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
@@ -163,26 +160,6 @@ namespace ClubManagement.Database.Context
                 .WithMany(club => club.Pitches)
                 .HasForeignKey(pitch => pitch.ClubId)
                 .OnDelete(DeleteBehavior.Cascade);
-        }
-        private void ConfigurePerson(EntityTypeBuilder<Person> builder)
-        {
-            builder
-                .ToTable(nameof(Person) + "s");
-            builder
-                .Property(person => person.FirstName)
-                .HasMaxLength(Size.StringMediumSize);
-            builder
-                .Property(person => person.LastName)
-                .HasMaxLength(Size.StringMediumSize);
-            builder
-                .Property(person => person.Street)
-                .HasMaxLength(Size.StringMediumSize);
-            builder
-                .Property(person => person.City)
-                .HasMaxLength(Size.StringSmallSize);
-            builder
-                .Property(person => person.Zip)
-                .HasMaxLength(Size.StringVerySmallSize);
         }
     }
 }
