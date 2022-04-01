@@ -8,24 +8,24 @@ namespace ClubManagement.WebApplication.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PlayerController : ControllerBase
+    public class PersonController : ControllerBase
     {
-        private readonly ILogger<PlayerController> logger;
-        private readonly IPlayerService playerService;
+        private readonly ILogger<PersonController> logger;
+        private readonly IPersonService personService;
 
-        public PlayerController(ILogger<PlayerController> logger, IPlayerService playerService)
+        public PersonController(ILogger<PersonController> logger, IPersonService personService)
         {
             this.logger = logger;
-            this.playerService = playerService;
+            this.personService = personService;
         }
 
         [HttpPost]
-        public async Task Create([FromBody] PlayerCreateModel playerCreate)
+        public async Task Create([FromBody] PersonCreateModel personCreate)
         {
 
             try
             {
-                await playerService.Create(playerCreate);
+                await personService.Create(personCreate);
             }
             catch (Exception ex)
             {
@@ -36,11 +36,11 @@ namespace ClubManagement.WebApplication.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(PlayerUpdateModel playerUpdate, Guid id)
+        public async Task<ActionResult> Update(PersonUpdateModel personUpdate, Guid id)
         {
             try
             {
-                await playerService.Update(playerUpdate);
+                await personService.Update(personUpdate);
             }
             catch (ArgumentException ex)
             {
@@ -59,11 +59,11 @@ namespace ClubManagement.WebApplication.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult> GetById(Guid id)
         {
-            PlayerViewModel result;
+            PersonViewModel result;
 
             try
             {
-                result = await playerService.GetById(id);
+                result = await personService.GetById(id);
             }
             catch (Exception ex)
             {
@@ -82,11 +82,11 @@ namespace ClubManagement.WebApplication.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
-            IEnumerable<PlayerViewModel> result;
+            IEnumerable<PersonViewModel> result;
 
             try
             {
-                result = await playerService.GetAll();
+                result = await personService.GetAll();
             }
             catch (Exception ex)
             {
@@ -103,7 +103,7 @@ namespace ClubManagement.WebApplication.Controllers
 
             try
             {
-                await playerService.Delete(id);
+                await personService.Delete(id);
             }
 
             catch (ArgumentException ex)

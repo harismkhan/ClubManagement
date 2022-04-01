@@ -4,12 +4,12 @@ using ClubManagement.Domain.ViewModels;
 
 namespace ClubManagement.Services.Interfaces
 {
-    public interface IPlayerService
+    public interface IPersonService
     {
-        Task Create(PlayerCreateModel createModel);
-        Task Update(PlayerUpdateModel updateModel);
-        Task<PlayerViewModel?> GetById(Guid id);
-        Task<IEnumerable<PlayerViewModel>> GetAll();
+        Task Create(PersonCreateModel createModel);
+        Task Update(PersonUpdateModel updateModel);
+        Task<PersonViewModel?> GetById(Guid id);
+        Task<IEnumerable<PersonViewModel>> GetAll();
         Task Delete(Guid id);
         
     }

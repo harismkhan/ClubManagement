@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace ClubManagement.Application
+namespace Microsoft.Extensions.DependencyInjection
 {
     public class Startup
     {

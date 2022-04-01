@@ -1,4 +1,4 @@
-using ClubManagement.Contexts;
+using ClubManagement.Database.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

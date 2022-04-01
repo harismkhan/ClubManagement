@@ -1,9 +1,9 @@
-﻿using ClubManagement.Domain;
-using ClubManagement.Domain.Models;
+﻿using ClubManagement.Domain.DomainModels;
+using ClubManagement.Domain.RequestModels.CreateModels;
+using ClubManagement.Domain.RequestModels.UpdateModels;
 using ClubManagement.Domain.ViewModels;
 using ClubManagement.Repositories.Interfaces;
 using ClubManagement.Services.Interfaces;
-using ClubManagement.Services.ViewModels;
 
 namespace ClubManagement.Services
 {
@@ -40,7 +40,7 @@ namespace ClubManagement.Services
 
         public async Task Update(PlayerUpdateModel updateModel)
         {
-            var playerToUpdate = await playerRepository.GetAsync(updateModel.PlayerId);
+            var playerToUpdate = await playerRepository.GetAsync(updateModel.Id);
 
             if (playerToUpdate == null)
             {
@@ -69,7 +69,7 @@ namespace ClubManagement.Services
 
             return player != null ? new PlayerViewModel()
             {
-                PlayerId = player.Id,
+                Id = player.Id,
                 FirstName = player.FirstName,
                 LastName = player.LastName,
                 BirthDate = player.BirthDate,
@@ -90,7 +90,7 @@ namespace ClubManagement.Services
 
             var playerViewModels = players.Select(player => new PlayerViewModel()
             {
-                PlayerId = player.Id,
+                Id = player.Id,
                 FirstName = player.FirstName,
                 LastName = player.LastName,
                 BirthDate = player.BirthDate,

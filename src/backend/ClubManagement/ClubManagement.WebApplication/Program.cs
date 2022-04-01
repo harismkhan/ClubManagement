@@ -40,15 +40,17 @@ void ConfigureService(IServiceCollection services)
     services.AddDatabase(configuration);
 
     services.AddScoped<IClubRepository, ClubRepository>();
-    services.AddScoped<IPlayerRepository, PlayerRepository>();
-    services.AddScoped<IPitchRepository, PitchRepository>();
     services.AddScoped<ITeamRepository, TeamRepository>();
     services.AddScoped<ICoachRepository, CoachRepository>();
+    services.AddScoped<IPlayerRepository, PlayerRepository>();
+    services.AddScoped<IPitchRepository, PitchRepository>();
+    services.AddScoped<IPersonRepository, PersonRepository>();
 
     services.AddScoped<IClubService, ClubService>();
     services.AddScoped<ITeamService, TeamService>();
     services.AddScoped<ICoachService, CoachService>();
     services.AddScoped<IPlayerService, PlayerService>();
     services.AddScoped<IPitchService, PitchService>();
+    services.AddScoped<IPersonService, PersonService>();
 
 }

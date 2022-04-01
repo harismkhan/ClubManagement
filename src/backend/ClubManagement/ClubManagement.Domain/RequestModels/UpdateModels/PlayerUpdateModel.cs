@@ -1,6 +1,6 @@
-﻿namespace ClubManagement.Domain.ViewModels
+﻿namespace ClubManagement.Domain.RequestModels.UpdateModels
 {
-    public class PlayerViewModel
+    public class PlayerUpdateModel
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; } = string.Empty;

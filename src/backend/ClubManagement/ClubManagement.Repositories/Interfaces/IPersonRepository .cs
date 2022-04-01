@@ -2,8 +2,8 @@
 
 namespace ClubManagement.Repositories.Interfaces
 {
-    public interface ICoachRepository : IBaseRepository<Coach>
+    public interface IPersonRepository : IBaseRepository<Person>
     {
-        
+
     }
 }

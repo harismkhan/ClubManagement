@@ -1,9 +1,9 @@
-﻿using ClubManagement.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ClubManagement.Domain.Models.Constants;
+using ClubManagement.Domain.DomainModels;
+using ClubManagement.Domain.Constants;
 
-namespace ClubManagement.Contexts
+namespace ClubManagement.Database.Context
 {
     public class ClubManagementContext : DbContext
     {
@@ -14,6 +14,7 @@ namespace ClubManagement.Contexts
             Coaches = Set<Coach>();
             Players = Set<Player>();
             Pitches = Set<Pitch>();
+            Persons = Set<Person>();
         }
 
         public DbSet<Club> Clubs { get; }
@@ -21,6 +22,7 @@ namespace ClubManagement.Contexts
         public DbSet<Coach> Coaches { get; }
         public DbSet<Player> Players { get; }
         public DbSet<Pitch> Pitches { get; }
+        public DbSet<Person> Persons { get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +31,7 @@ namespace ClubManagement.Contexts
             ConfigureCoach(modelBuilder.Entity<Coach>());
             ConfigurePlayer(modelBuilder.Entity<Player>());
             ConfigurePitch(modelBuilder.Entity<Pitch>());
+            ConfigurePerson(modelBuilder.Entity<Person>());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
@@ -160,6 +163,26 @@ namespace ClubManagement.Contexts
                 .WithMany(club => club.Pitches)
                 .HasForeignKey(pitch => pitch.ClubId)
                 .OnDelete(DeleteBehavior.Cascade);
+        }
+        private void ConfigurePerson(EntityTypeBuilder<Person> builder)
+        {
+            builder
+                .ToTable(nameof(Person) + "s");
+            builder
+                .Property(person => person.FirstName)
+                .HasMaxLength(Size.StringMediumSize);
+            builder
+                .Property(person => person.LastName)
+                .HasMaxLength(Size.StringMediumSize);
+            builder
+                .Property(person => person.Street)
+                .HasMaxLength(Size.StringMediumSize);
+            builder
+                .Property(person => person.City)
+                .HasMaxLength(Size.StringSmallSize);
+            builder
+                .Property(person => person.Zip)
+                .HasMaxLength(Size.StringVerySmallSize);
         }
     }
 }

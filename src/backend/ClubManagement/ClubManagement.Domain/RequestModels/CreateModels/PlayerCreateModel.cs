@@ -1,8 +1,7 @@
-﻿namespace ClubManagement.Domain.ViewModels
+﻿namespace ClubManagement.Domain.RequestModels.CreateModels
 {
-    public class PlayerViewModel
+    public class PlayerCreateModel
     {
-        public Guid Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }

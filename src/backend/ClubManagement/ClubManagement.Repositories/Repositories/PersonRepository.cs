@@ -4,10 +4,11 @@ using ClubManagement.Repositories.Interfaces;
 
 namespace ClubManagement.Repositories.Repositories
 {
-    public class CoachRepository : BaseRepository<Coach>, ICoachRepository
+    public class PersonRepository : BaseRepository<Person>, IPersonRepository
     {
-        public CoachRepository(ClubManagementContext context) : base(context)
+        public PersonRepository(ClubManagementContext context) : base(context)
         {
+
         }
     }
 }

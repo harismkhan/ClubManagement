@@ -1,4 +1,4 @@
-﻿namespace ClubManagement.Services.ViewModels
+﻿namespace ClubManagement.Domain.ViewModels
 {
     public class ClubViewModel
     {

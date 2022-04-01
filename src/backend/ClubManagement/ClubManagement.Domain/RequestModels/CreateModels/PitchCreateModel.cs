@@ -1,4 +1,4 @@
-﻿namespace ClubManagement.Domain.Models
+﻿namespace ClubManagement.Domain.RequestModels.CreateModels
 {
     public class PitchCreateModel
     {

@@ -1,6 +1,6 @@
 ﻿using ClubManagement.Backbone;
 
-namespace ClubManagement.Domain
+namespace ClubManagement.Domain.DomainModels
 {
     public abstract class Member : Entity
     {

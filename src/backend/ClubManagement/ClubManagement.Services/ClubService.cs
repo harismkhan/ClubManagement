@@ -1,8 +1,9 @@
-﻿using ClubManagement.Domain;
-using ClubManagement.Domain.Models;
+﻿using ClubManagement.Domain.DomainModels;
+using ClubManagement.Domain.RequestModels.CreateModels;
+using ClubManagement.Domain.RequestModels.UpdateModels;
+using ClubManagement.Domain.ViewModels;
 using ClubManagement.Repositories.Interfaces;
 using ClubManagement.Services.Interfaces;
-using ClubManagement.Services.ViewModels;
 
 namespace ClubManagement.Services
 {

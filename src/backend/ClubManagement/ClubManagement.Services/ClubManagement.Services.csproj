@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClubManagement.Backbone\ClubManagement.BackBone.csproj" />
     <ProjectReference Include="..\ClubManagement.Repositories\ClubManagement.Repositories.csproj" />
   </ItemGroup>
 

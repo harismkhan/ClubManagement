@@ -1,7 +1,7 @@
 ﻿using ClubManagement.Backbone;
 ﻿using ClubManagement.Domain.Enums;
 
-namespace ClubManagement.Domain
+namespace ClubManagement.Domain.DomainModels
 {
     public class Team : Entity
     {

@@ -1,8 +1,9 @@
 ﻿using ClubManagement.Database.Migrator;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ClubManagement.TestApp
+namespace ClubManagement.Application
 {
     internal class Program
     {

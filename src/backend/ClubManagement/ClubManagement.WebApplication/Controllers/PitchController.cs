@@ -1,4 +1,5 @@
-using ClubManagement.Domain.Models;
+using ClubManagement.Domain.RequestModels.CreateModels;
+using ClubManagement.Domain.RequestModels.UpdateModels;
 using ClubManagement.Domain.ViewModels;
 using ClubManagement.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
