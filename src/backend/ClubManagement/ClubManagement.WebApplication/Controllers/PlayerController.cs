@@ -36,7 +36,7 @@ namespace ClubManagement.WebApplication.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update(PlayerUpdateModel playerUpdate, Guid id)
+        public async Task<ActionResult> Update(PlayerUpdateModel playerUpdate)
         {
             try
             {
