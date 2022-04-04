@@ -8,8 +8,9 @@ namespace ClubManagement.Services.Interfaces
     {
         Task Create(PitchCreateModel createModel);
         Task Update(PitchUpdateModel updateModel);
-        Task<PitchViewModel?> GetById(Guid id);
+        Task<PitchViewModel> GetById(Guid id);
         Task<IEnumerable<PitchViewModel>> GetAll();
+        Task<IEnumerable<PitchViewModel>> GetAllByClubId(Guid clubId);
         Task Delete(Guid id);
     }
 }

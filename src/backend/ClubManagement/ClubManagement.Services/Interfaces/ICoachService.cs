@@ -8,8 +8,9 @@ namespace ClubManagement.Services.Interfaces
     {
         Task Create(CoachCreateModel createModel);
         Task Update(CoachUpdateModel updateModel);
-        Task<CoachViewModel?> GetById(Guid id);
+        Task<CoachViewModel> GetById(Guid id);
         Task<IEnumerable<CoachViewModel>> GetAll();
+        Task<IEnumerable<CoachViewModel>> GetAllByTeamId(Guid teamId);
         Task Delete(Guid id);
 
     }

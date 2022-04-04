@@ -8,9 +8,9 @@ namespace ClubManagement.Services.Interfaces
     {
         Task Create(PlayerCreateModel createModel);
         Task Update(PlayerUpdateModel updateModel);
-        Task<PlayerViewModel?> GetById(Guid id);
+        Task<PlayerViewModel> GetById(Guid id);
         Task<IEnumerable<PlayerViewModel>> GetAll();
+        Task<IEnumerable<PlayerViewModel>> GetAllByTeamId(Guid teamId);
         Task Delete(Guid id);
-        
     }
 }

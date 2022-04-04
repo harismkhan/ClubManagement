@@ -12,7 +12,6 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ICoachRepository, CoachRepository>();
             services.AddScoped<IPlayerRepository, PlayerRepository>();
             services.AddScoped<IPitchRepository, PitchRepository>();
-            services.AddScoped<IPersonRepository, PersonRepository>();
 
             return services;
         }

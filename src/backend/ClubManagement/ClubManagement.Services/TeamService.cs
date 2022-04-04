@@ -43,16 +43,21 @@ namespace ClubManagement.Services
             await teamRepository.SaveContextChanges();
         }
 
-        public async Task<TeamViewModel?> GetById(Guid id)
+        public async Task<TeamViewModel> GetById(Guid id)
         {
             var team = await teamRepository.GetAsync(id);
 
-            return team != null ? new TeamViewModel()
+            if (team == null)
+            {
+                throw new ArgumentException($"{nameof(Team)} with id {id} not found.");
+            }
+
+            return new TeamViewModel()
             {
                 Id = team.Id,
                 Level = team.Level,
                 ClubId = team.ClubId,
-            } : null;
+            };
         }
 
         public async Task<IEnumerable<TeamViewModel>> GetAll()

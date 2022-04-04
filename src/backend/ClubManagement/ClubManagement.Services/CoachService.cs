@@ -58,11 +58,16 @@ namespace ClubManagement.Services
             await coachRepository.SaveContextChanges();
         }
 
-        public async Task<CoachViewModel?> GetById(Guid id)
+        public async Task<CoachViewModel> GetById(Guid id)
         {
             var coach = await coachRepository.GetAsync(id);
 
-            return coach != null ? new CoachViewModel()
+            if (coach == null)
+            {
+                throw new ArgumentException($"{nameof(Coach)} with id {id} not found.");
+            }
+
+            return new CoachViewModel()
             {
                 Id = coach.Id,
                 Type = coach.Type,
@@ -73,8 +78,8 @@ namespace ClubManagement.Services
                 City = coach.City,
                 Zip = coach.Zip,
                 ClubId = coach.ClubId,
-                TeamId = coach.Id,
-            } : null;
+                TeamId = coach.TeamId,
+            };
         }
 
         public async Task<IEnumerable<CoachViewModel>> GetAll()
@@ -91,8 +96,32 @@ namespace ClubManagement.Services
                 Street = coach.Street,
                 City = coach.City,
                 Zip = coach.Zip,
-                ClubId = coach.Id,
-                TeamId = coach.Id,
+                ClubId = coach.ClubId,
+                TeamId = coach.TeamId,
+            });
+
+            return coachViewModels;
+        }
+        public async Task<IEnumerable<CoachViewModel>> GetAllByTeamId(Guid teamId)
+        {
+            var team = await coachRepository.GetOtherAsync<Team>(teamId);
+
+            if (team == null)
+            {
+                throw new ArgumentException($"{nameof(Team)} with id {teamId} not found.");
+            }
+
+            var coachViewModels = team.Coaches.Select(coach => new CoachViewModel()
+            {
+                Id = coach.Id,
+                FirstName = coach.FirstName,
+                LastName = coach.LastName,
+                BirthDate = coach.BirthDate,
+                Street = coach.Street,
+                City = coach.City,
+                Zip = coach.Zip,
+                ClubId = coach.ClubId,
+                TeamId = coach.TeamId,
             });
 
             return coachViewModels;

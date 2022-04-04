@@ -8,7 +8,7 @@ namespace ClubManagement.Services.Interfaces
     {
         Task Create(ClubCreateModel createModel);
         Task Update(ClubUpdateModel updateModel);
-        Task<ClubViewModel?> GetById(Guid id);
+        Task<ClubViewModel> GetById(Guid id);
         Task<IEnumerable<ClubViewModel>> GetAll();
         Task Delete(Guid id);   
     }

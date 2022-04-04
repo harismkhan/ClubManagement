@@ -96,6 +96,28 @@ namespace ClubManagement.WebApplication.Controllers
             return Ok(result);
         }
 
+        [HttpGet("club/{clubId}")]
+        public async Task<ActionResult> GetAllByClubId(Guid clubId)
+        {
+            IEnumerable<PitchViewModel> result;
+
+            try
+            {
+                result = await pitchService.GetAllByClubId(clubId);
+            }
+            catch (ArgumentException ex)
+            {
+                logger.LogInformation(ex.Message);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
+            return Ok(result);
+        }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult?> Delete(Guid id)

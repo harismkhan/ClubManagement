@@ -65,15 +65,15 @@ namespace ClubManagement.WebApplication.Controllers
             {
                 result = await clubService.GetById(id);
             }
+            catch (ArgumentException ex)
+            {
+                logger.LogInformation(ex.Message);
+                return NotFound();
+            }
             catch (Exception ex)
             {
                 logger.LogError(ex.Message);
                 return BadRequest();
-            }
-
-            if (result == null)
-            {
-                return NotFound();
             }
 
             return Ok(result);

@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Backbone\ClubManagement.BackBone.csproj" />
-    <ProjectReference Include="..\ClubManagement.Backbone\ClubManagement.BackBone.csproj" />
+    <ProjectReference Include="..\ClubManagement.Backbone\ClubManagement.Backbone.csproj" />
   </ItemGroup>
 
 </Project>

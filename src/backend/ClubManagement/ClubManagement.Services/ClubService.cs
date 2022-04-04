@@ -48,18 +48,23 @@ namespace ClubManagement.Services
             await clubRepository.SaveContextChanges();
         }
 
-        public async Task<ClubViewModel?> GetById(Guid id)
+        public async Task<ClubViewModel> GetById(Guid id)
         {
             var club = await clubRepository.GetAsync(id);
+            
+            if (club == null)
+            {
+                throw new ArgumentException($"{nameof(Club)} with id {id} not found.");
+            }
 
-            return club != null ? new ClubViewModel()
+            return new ClubViewModel()
             {
                 Id = club.Id,
                 Name = club.Name,
                 City = club.City,
                 Street = club.Street,
                 Zip = club.Zip,
-            } : null;
+            };
         }
 
         public async Task<IEnumerable<ClubViewModel>> GetAll()

@@ -47,18 +47,23 @@ namespace ClubManagement.Services
             await pitchRepository.SaveContextChanges();
         }
 
-        public async Task<PitchViewModel?> GetById(Guid id)
+        public async Task<PitchViewModel> GetById(Guid id)
         {
             var pitch = await pitchRepository.GetAsync(id);
 
-            return pitch != null ? new PitchViewModel()
+            if (pitch == null)
+            {
+                throw new ArgumentException($"{nameof(Pitch)} with id {id} not found.");
+            }
+
+            return new PitchViewModel()
             {
                 Id = pitch.Id,
                 Street = pitch.Street,
                 City = pitch.City,
                 Zip = pitch.Zip,
                 ClubId = pitch.ClubId,
-            } : null;
+            };
         }
 
         public async Task<IEnumerable<PitchViewModel>> GetAll()
@@ -66,6 +71,27 @@ namespace ClubManagement.Services
             var pitches = await pitchRepository.GetAllAsync();
 
             var pitchViewModels = pitches.Select(pitch => new PitchViewModel()
+            {
+                Id = pitch.Id,
+                Street = pitch.Street,
+                City = pitch.City,
+                Zip = pitch.Zip,
+                ClubId = pitch.ClubId,
+            });
+
+            return pitchViewModels;
+        }
+
+        public async Task<IEnumerable<PitchViewModel>> GetAllByClubId(Guid clubId)
+        {
+            var club = await pitchRepository.GetOtherAsync<Club>(clubId);
+
+            if (club == null)
+            {
+                throw new ArgumentException($"{nameof(Club)} with id {clubId} not found.");
+            }
+
+            var pitchViewModels = club.Pitches.Select(pitch => new PitchViewModel()
             {
                 Id = pitch.Id,
                 Street = pitch.Street,

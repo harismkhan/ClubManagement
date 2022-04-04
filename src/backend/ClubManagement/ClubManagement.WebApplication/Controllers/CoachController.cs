@@ -65,15 +65,15 @@ namespace ClubManagement.WebApplication.Controllers
             {
                 result = await coachService.GetById(id);
             }
+            catch (ArgumentException ex)
+            {
+                logger.LogInformation(ex.Message);
+                return NotFound();
+            }
             catch (Exception ex)
             {
                 logger.LogError(ex.Message);
                 return BadRequest();
-            }
-
-            if (result == null)
-            {
-                return NotFound();
             }
 
             return Ok(result);
@@ -93,6 +93,29 @@ namespace ClubManagement.WebApplication.Controllers
                 logger.LogError(ex.Message);
                 return BadRequest();
             }
+            return Ok(result);
+        }
+
+        [HttpGet("team/{teamId}")]
+        public async Task<ActionResult> GetAllByTeamId(Guid teamId)
+        {
+            IEnumerable<CoachViewModel> result;
+
+            try
+            {
+                result = await coachService.GetAllByTeamId(teamId);
+            }
+            catch (ArgumentException ex)
+            {
+                logger.LogInformation(ex.Message);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
             return Ok(result);
         }
 

@@ -12,7 +12,7 @@
         public decimal Height { get; set; } = 0;
         public decimal Weight { get; set; } = 0;
         public int PlayerNumber { get; set; } = 0;
-        public Guid ClubId { get; set; }
-        public Guid TeamId { get; set; }
+        public Guid? ClubId { get; set; }
+        public Guid? TeamId { get; set; }
     }
 }

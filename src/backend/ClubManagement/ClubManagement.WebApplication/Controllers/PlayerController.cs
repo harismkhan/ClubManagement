@@ -44,7 +44,7 @@ namespace ClubManagement.WebApplication.Controllers
             }
             catch (ArgumentException ex)
             {
-                logger.LogError(ex.Message);
+                logger.LogInformation(ex.Message);
                 return NotFound();
             }
             catch (Exception ex)
@@ -65,15 +65,15 @@ namespace ClubManagement.WebApplication.Controllers
             {
                 result = await playerService.GetById(id);
             }
+            catch (ArgumentException ex)
+            {
+                logger.LogInformation(ex.Message);
+                return NotFound();
+            }
             catch (Exception ex)
             {
                 logger.LogError(ex.Message);
                 return BadRequest();
-            }
-
-            if (result == null)
-            {
-                return NotFound();
             }
 
             return Ok(result);
@@ -96,6 +96,28 @@ namespace ClubManagement.WebApplication.Controllers
             return Ok(result);
         }
 
+        [HttpGet("team/{teamId}")]
+        public async Task<ActionResult> GetAllByTeamId(Guid teamId)
+        {
+            IEnumerable<PlayerViewModel> result;
+
+            try
+            {
+                result = await playerService.GetAllByTeamId(teamId);
+            }
+            catch (ArgumentException ex)
+            {
+                logger.LogInformation(ex.Message);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
+                return BadRequest();
+            }
+
+            return Ok(result);
+        }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult?> Delete(Guid id)

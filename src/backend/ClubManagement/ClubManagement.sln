@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Database", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Repositories", "ClubManagement.Repositories\ClubManagement.Repositories.csproj", "{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.BackBone", "ClubManagement.Backbone\ClubManagement.BackBone.csproj", "{E6741100-74DD-4658-8690-C2F970FAAC8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Backbone", "ClubManagement.Backbone\ClubManagement.Backbone.csproj", "{E6741100-74DD-4658-8690-C2F970FAAC8A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.WebApplication", "ClubManagement.WebApplication\ClubManagement.WebApplication.csproj", "{B1952EC4-E195-4458-AD4D-9C075F0EB13A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubManagement.Application", "ClubManagement.Application\ClubManagement.Application.csproj", "{1731C275-689E-4D82-8B36-EC65AE36E30F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Application", "ClubManagement.Application\ClubManagement.Application.csproj", "{1731C275-689E-4D82-8B36-EC65AE36E30F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
