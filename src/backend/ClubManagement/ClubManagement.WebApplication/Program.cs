@@ -38,6 +38,8 @@ app.Run();
 void ConfigureService(IServiceCollection services)
 {
     services.AddDatabase(configuration);
+    services.AddRepositories();
+    services.AddServices();
 
     services.AddScoped<IClubRepository, ClubRepository>();
     services.AddScoped<ITeamRepository, TeamRepository>();

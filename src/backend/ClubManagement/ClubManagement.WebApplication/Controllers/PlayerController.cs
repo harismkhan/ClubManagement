@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ClubManagement.WebApplication.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PlayerController : ControllerBase
     {
         private readonly ILogger<PlayerController> logger;
