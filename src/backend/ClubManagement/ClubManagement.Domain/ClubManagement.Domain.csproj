@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Backbone\Backbone.csproj" />
+    <ProjectReference Include="..\Backbone\ClubManagement.BackBone.csproj" />
+    <ProjectReference Include="..\ClubManagement.Backbone\ClubManagement.Backbone.csproj" />
   </ItemGroup>
 
 </Project>
+ 

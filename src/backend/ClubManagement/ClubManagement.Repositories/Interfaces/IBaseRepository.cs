@@ -20,6 +20,7 @@ namespace ClubManagement.Repositories.Interfaces
         Task<bool> ExistsByIdAsync(Guid id);
 
         Task<bool> AnyAsync();
+        Task SaveContextChanges();
 
     }
 }

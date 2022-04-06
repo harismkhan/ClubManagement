@@ -5,21 +5,15 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Domain", "ClubManagement.Domain\ClubManagement.Domain.csproj", "{A9D84380-5D98-46F5-861D-E3B1B288A27E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.TestApp", "ClubManagement.TestApp\ClubManagement.TestApp.csproj", "{43751638-3661-49CB-B1F2-E7B8C679C4E4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Database", "ClubManagement.Database\ClubManagement.Database.csproj", "{54D15BF3-52C5-4E11-A819-45E3E4B5601E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Repositories", "ClubManagement.Repositories\ClubManagement.Repositories.csproj", "{38E50EBB-1B1C-4188-9C5F-680DF5308EE1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backbone", "Backbone\Backbone.csproj", "{E6741100-74DD-4658-8690-C2F970FAAC8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Backbone", "ClubManagement.Backbone\ClubManagement.Backbone.csproj", "{E6741100-74DD-4658-8690-C2F970FAAC8A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{88F7A295-356D-4F28-8510-0F39678E58BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.WebApplication", "ClubManagement.WebApplication\ClubManagement.WebApplication.csproj", "{B1952EC4-E195-4458-AD4D-9C075F0EB13A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Repositories", "2 - Repositories", "{D1470103-EED3-40A2-B783-F16E1657177C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Models", "3 - Models", "{2A23E532-4164-4CF2-BF42-0B9DED47DEE7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{DB4E1E61-E967-4CCA-A0A0-1B7768B34865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +25,6 @@ Global
 		{A9D84380-5D98-46F5-861D-E3B1B288A27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9D84380-5D98-46F5-861D-E3B1B288A27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9D84380-5D98-46F5-861D-E3B1B288A27E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43751638-3661-49CB-B1F2-E7B8C679C4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43751638-3661-49CB-B1F2-E7B8C679C4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43751638-3661-49CB-B1F2-E7B8C679C4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43751638-3661-49CB-B1F2-E7B8C679C4E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{54D15BF3-52C5-4E11-A819-45E3E4B5601E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54D15BF3-52C5-4E11-A819-45E3E4B5601E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54D15BF3-52C5-4E11-A819-45E3E4B5601E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,16 +37,17 @@ Global
 		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6741100-74DD-4658-8690-C2F970FAAC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1952EC4-E195-4458-AD4D-9C075F0EB13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1952EC4-E195-4458-AD4D-9C075F0EB13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1952EC4-E195-4458-AD4D-9C075F0EB13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1952EC4-E195-4458-AD4D-9C075F0EB13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A9D84380-5D98-46F5-861D-E3B1B288A27E} = {2A23E532-4164-4CF2-BF42-0B9DED47DEE7}
-		{43751638-3661-49CB-B1F2-E7B8C679C4E4} = {88F7A295-356D-4F28-8510-0F39678E58BB}
-		{54D15BF3-52C5-4E11-A819-45E3E4B5601E} = {DB4E1E61-E967-4CCA-A0A0-1B7768B34865}
-		{38E50EBB-1B1C-4188-9C5F-680DF5308EE1} = {D1470103-EED3-40A2-B783-F16E1657177C}
-		{E6741100-74DD-4658-8690-C2F970FAAC8A} = {DB4E1E61-E967-4CCA-A0A0-1B7768B34865}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C1C36DB-ECBA-4E32-AC73-850FA14E3E67}

@@ -1,9 +1,9 @@
-﻿using ClubManagement.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ClubManagement.Domain.Models.Constants;
+using ClubManagement.Domain.DomainModels;
+using ClubManagement.Domain.Constants;
 
-namespace ClubManagement.Contexts
+namespace ClubManagement.Database.Context
 {
     public class ClubManagementContext : DbContext
     {

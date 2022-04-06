@@ -1,4 +1,4 @@
-﻿namespace ClubManagement.Domain
+﻿namespace ClubManagement.Domain.DomainModels
 {
     public class Player : Member
     {

@@ -1,5 +1,5 @@
-﻿using ClubManagement.Contexts;
-using ClubManagement.Domain;
+﻿using ClubManagement.Database.Context;
+using ClubManagement.Domain.DomainModels;
 using ClubManagement.Repositories.Interfaces;
 
 namespace ClubManagement.Repositories.Repositories

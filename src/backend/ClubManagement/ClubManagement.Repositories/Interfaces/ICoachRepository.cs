@@ -1,4 +1,4 @@
-﻿using ClubManagement.Domain;
+﻿using ClubManagement.Domain.DomainModels;
 
 namespace ClubManagement.Repositories.Interfaces
 {
