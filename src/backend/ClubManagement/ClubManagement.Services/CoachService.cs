@@ -37,7 +37,7 @@ namespace ClubManagement.Services
 
         public async Task Update(CoachUpdateModel updateModel)
         {
-            var coachToUpdate = await coachRepository.GetAsync(updateModel.CoachId);
+            var coachToUpdate = await coachRepository.GetAsync(updateModel.Id);
 
             if (coachToUpdate == null)
             {

@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.WebApplicati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Services", "ClubManagement.Services\ClubManagement.Services.csproj", "{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClubManagement.Application", "ClubManagement.Application\ClubManagement.Application.csproj", "{1731C275-689E-4D82-8B36-EC65AE36E30F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB886B4D-696E-4B80-AFEC-9D869CF3B9F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1731C275-689E-4D82-8B36-EC65AE36E30F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1731C275-689E-4D82-8B36-EC65AE36E30F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1731C275-689E-4D82-8B36-EC65AE36E30F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1731C275-689E-4D82-8B36-EC65AE36E30F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

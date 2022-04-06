@@ -1,0 +1,47 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+*{
+    font-family: sans-serif;
+}
+ h1{
+    text-align: center; 
+    font-size: 50px;
+    margin-bottom: 50PX;
+    background-color: rgb(241, 239, 239);
+    padding: 10px;
+}
+.button {
+    margin-left: 10%;
+    padding-inline: 20px;
+    padding-block: auto;
+    font-size: large;
+    border: none;
+    clear: none;
+    margin-bottom: 1%;
+}
+.button:hover {
+    background-color: rgb(241, 239, 239);
+}
+.select {
+  margin-left: 15%;  
+  margin-bottom: 1rem;
+}
+.input {
+    margin-left: 15%;  
+    width: 70%;
+    margin-bottom: 2rem;
+}
+.footer {
+    background-color: rgb(241, 239, 239);
+    padding-bottom: 3rem;
+}
+.breadcrumb {
+    margin-left: 15%;
+    font-size: padding;
+    padding-bottom:  2rem;
+}
+.table {
+    margin-left: 5%;
+    width: 90%;
+}
+.delete {
+margin-top: 8px;}

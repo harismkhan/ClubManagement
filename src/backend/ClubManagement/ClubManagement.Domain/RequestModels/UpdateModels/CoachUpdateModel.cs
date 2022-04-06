@@ -4,7 +4,7 @@ namespace ClubManagement.Domain.RequestModels.UpdateModels
 {
     public class CoachUpdateModel
     {
-        public Guid CoachId { get; set; }
+        public Guid Id { get; set; }
         public CoachType Type { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
