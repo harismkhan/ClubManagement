@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Player</title>
+  <link rel="stylesheet" href="..\css\styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="..\js\models\player.js"></script>
+  <script type="text/javascript" src="..\js\helpers\PlayerParser.js"></script>
+  <script type="text/javascript" src="..\js\pages\PlayerEdit.js"></script>
+  <script src="https://kit.fontawesome.com/d7082065c1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1>Edit Player
+    <button class="navbutton" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
+    <button class="navbutton" onclick="window.location.href = './Players.html';"><i class="fa fa-users"></i> All Players</button>
+  </h1>
+  <div id="input">
+    <h2>First Name</h2>
+    <input class="input" id="FirstName" type="text"/>
+    <h2>Last Name</h2>
+    <input class="input" id="LastName" type="text"/>
+    <h2>Birthdate</h2>
+    <input class="input" id="BirthDate" type="text"/>
+    <h2>Street</h2>
+    <input class="input" id="Street" type="text"/>
+    <h2>City</h2>
+    <input class="input" id="City" type="text"/>
+    <h2>Zip</h2>
+    <input class="input" id="Zip" type="text"/>
+    <h2>Height (m)</h2>
+    <input class="input" id="Height" type="text"/>
+    <h2>Weight (kg)</h2>
+    <input class="input" id="Weight" type="text"/>
+    <h2>PlayerNumber</h2>
+    <input class="input" id="PlayerNumber" type="text"/>
+    <h2>ClubId</h2>
+    <input class="input" id="ClubId" type="text"/>
+    <h2>TeamId</h2>
+    <input class="input" id="TeamId" type="text"/>
+    <button title="save" class="button" id="SaveButton" onclick="onSave()"><i class="fa fa-bookmark-o"></i></button>
+    <button title="delete" class="button" id="DeleteButton" onclick="onDelete()" ><i class="fa fa-trash-o"></i></button>
+    <button title="cancel" class="button" id="CancelButton" onclick="window.location.href = './Players.html'"><i class="fa-solid fa-xmark" ></i></button>
+
+  </div>
+  
+</body>
+
+</html>
