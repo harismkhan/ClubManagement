@@ -1,5 +1,7 @@
+const playersKey = ("clubmanagement.players")
+
 function onInit() {
-    let playersJson = localStorage.getItem("clubmanagement.players");
+    let playersJson = localStorage.getItem(playersKey);
 
     let players = PlayerParser.multipleFromJson(playersJson);
     let tableBody = document.getElementById("playerTableBody");
@@ -25,7 +27,7 @@ function onRowClick(id) {
     window.location.href = `./playerEdit.html?id=${id}`;
 }
 function onDelete(id) {
-    let playersJson = localStorage.getItem("clubmanagement.players") ?? "[]";
+    let playersJson = localStorage.getItem(playersKey) ?? "[]";
     let players = PlayerParser.multipleFromJson(playersJson);
     let index = players.findIndex(p => p.id == id);
 
@@ -35,7 +37,7 @@ function onDelete(id) {
 
     players.splice(index, 1);
 
-    localStorage.setItem("clubmanagement.players", JSON.stringify(players));
+    localStorage.setItem(playersKey, JSON.stringify(players));
 
     window.location.href = "./players.html";
 

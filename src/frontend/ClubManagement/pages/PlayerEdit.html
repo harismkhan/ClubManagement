@@ -17,38 +17,44 @@
 
 <body>
   <h1>Edit Player
-    <button class="navbutton" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
-    <button class="navbutton" onclick="window.location.href = './Players.html';"><i class="fa fa-users"></i> All Players</button>
+    <button class="navButton" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
+    <button class="navButton" onclick="window.location.href = './Players.html';"><i class="fa fa-users"></i> All Players</button>
   </h1>
-  <div id="input">
+  <form id="input">
     <h2>First Name</h2>
-    <input class="input" id="FirstName" type="text"/>
+    <input class="input" id="FirstName" type="text" />
     <h2>Last Name</h2>
-    <input class="input" id="LastName" type="text"/>
+    <input class="input" id="LastName" type="text" />
     <h2>Birthdate</h2>
-    <input class="input" id="BirthDate" type="text"/>
+    <input class="input" id="BirthDate" type="text" />
     <h2>Street</h2>
-    <input class="input" id="Street" type="text"/>
+    <input class="input" id="Street" type="text" />
     <h2>City</h2>
-    <input class="input" id="City" type="text"/>
+    <input class="input" id="City" type="text" />
     <h2>Zip</h2>
-    <input class="input" id="Zip" type="text"/>
+    <input class="input" id="Zip" type="text" />
     <h2>Height (m)</h2>
-    <input class="input" id="Height" type="text"/>
+    <input class="input" id="Height" type="text" />
     <h2>Weight (kg)</h2>
-    <input class="input" id="Weight" type="text"/>
+    <input class="input" id="Weight" type="text" />
     <h2>PlayerNumber</h2>
-    <input class="input" id="PlayerNumber" type="text"/>
+    <input class="input" id="PlayerNumber" type="text" />
     <h2>ClubId</h2>
-    <input class="input" id="ClubId" type="text"/>
+    <input class="input" id="ClubId" type="text" />
     <h2>TeamId</h2>
-    <input class="input" id="TeamId" type="text"/>
-    <button title="save" class="button" id="SaveButton" onclick="onSave()"><i class="fa fa-bookmark-o"></i></button>
-    <button title="delete" class="button" id="DeleteButton" onclick="onDelete()" ><i class="fa fa-trash-o"></i></button>
-    <button title="cancel" class="button" id="CancelButton" onclick="window.location.href = './Players.html'"><i class="fa-solid fa-xmark" ></i></button>
+    <input class="input" id="TeamId" type="text" />
+    <a title="save" class="button" id="saveButton" onclick="onSave()" href="./Players.html">
+      <i class="fa fa-bookmark-o"></i>
+    </a>
+    <a title="delete" class="button" id="deleteButton" onclick="onDelete()" href="./Players.html">
+      <i class="fa fa-trash-o"></i>
+    </a>
+    <a href="./Players.html" title="cancel" class="button" id="cancelButton">
+        <i class="fa-solid fa-xmark"></i>
+    </a>
 
-  </div>
-  
+  </form>
+
 </body>
 
 </html>
