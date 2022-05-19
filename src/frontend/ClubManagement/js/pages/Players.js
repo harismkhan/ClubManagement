@@ -1,4 +1,4 @@
-const playersKey = ("clubmanagement.players")
+const playersKey = "clubmanagement.players"
 
 function onInit() {
     let playersJson = localStorage.getItem(playersKey);

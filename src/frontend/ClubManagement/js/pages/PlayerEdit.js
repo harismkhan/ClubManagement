@@ -1,4 +1,4 @@
-const playersKey = ("clubmanagement.players")
+const playersKey = "clubmanagement.players"
 
 
 function onInit() {
@@ -19,17 +19,17 @@ function onInit() {
 }
 
 function fillFormFromPlayer(player) {
-    document.getElementById("FirstName").value = player.firstName;
-    document.getElementById("LastName").value = player.lastName;
-    document.getElementById("BirthDate").value = player.birthDate;
-    document.getElementById("Street").value = player.street;
-    document.getElementById("City").value = player.city;
-    document.getElementById("Zip").value = player.zip;
-    document.getElementById("Height").value = player.height;
-    document.getElementById("Weight").value = player.weight;
-    document.getElementById("PlayerNumber").value = player.playerNumber;
-    document.getElementById("ClubId").value = player.clubId;
-    document.getElementById("TeamId").value = player.teamId;
+    document.getElementById("firstName").value = player.firstName;
+    document.getElementById("lastName").value = player.lastName;
+    document.getElementById("birthDate").value = player.birthDate;
+    document.getElementById("street").value = player.street;
+    document.getElementById("city").value = player.city;
+    document.getElementById("zip").value = player.zip;
+    document.getElementById("height").value = player.height;
+    document.getElementById("weight").value = player.weight;
+    document.getElementById("playerNumber").value = player.playerNumber;
+    document.getElementById("clubId").value = player.clubId;
+    document.getElementById("teamId").value = player.teamId;
 }
 
 function onSave() {
@@ -64,17 +64,17 @@ function getIdFromParameters() {
 }
 
 function readPlayerFromForm(id){
-    let firstName = document.getElementById("FirstName").value;
-    let lastName = document.getElementById("LastName").value;
-    let birthDate = document.getElementById("BirthDate").value;
-    let street = document.getElementById("Street").value;
-    let city = document.getElementById("City").value;
-    let zip = document.getElementById("Zip").value;
-    let height = document.getElementById("Height").value;
-    let weight = document.getElementById("Weight").value;
-    let playerNumber = document.getElementById("PlayerNumber").value;
-    let clubId = document.getElementById("ClubId").value;
-    let teamId = document.getElementById("TeamId").value;
+    let firstName = document.getElementById("firstName").value;
+    let lastName = document.getElementById("lastName").value;
+    let birthDate = document.getElementById("birthDate").value;
+    let street = document.getElementById("street").value;
+    let city = document.getElementById("city").value;
+    let zip = document.getElementById("zip").value;
+    let height = document.getElementById("height").value;
+    let weight = document.getElementById("weight").value;
+    let playerNumber = document.getElementById("playerNumber").value;
+    let clubId = document.getElementById("clubId").value;
+    let teamId = document.getElementById("teamId").value;
 
     return new Player(id, firstName, lastName, birthDate, street, city, zip, height, weight, playerNumber, clubId, teamId);
 }
