@@ -1,10 +1,17 @@
 const playersKey = ("clubmanagement.players")
 
-function onInit() {
-    let playersJson = localStorage.getItem(playersKey);
-
+async function onInit() {
+    let playersJson = await PlayerService.getItems() ?? "[]";
     let players = PlayerParser.multipleFromJson(playersJson);
+
+    fillTable(players)
+
+}
+
+function fillTable(players) {
     let tableBody = document.getElementById("playerTableBody");
+tableBody.innerHTML =``;
+
     for (var i = 0; i < players.length; i++) {
         tableBody.innerHTML += `
         <tr class="row" >
@@ -23,6 +30,8 @@ function onInit() {
             ;
     }
 }
+
+
 function onRowClick(id) {
     window.location.href = `./playerEdit.html?id=${id}`;
 }
@@ -40,11 +49,10 @@ function onDelete(id) {
     localStorage.setItem(playersKey, JSON.stringify(players));
 
     window.location.href = "./players.html";
-
 }
 
-setTimeout(() => {
-    onInit();
+setTimeout(async() => {
+    await onInit();
 }, 1);
 
 document.addEventListener('keydown', function (event) {
@@ -52,3 +60,4 @@ document.addEventListener('keydown', function (event) {
         window.location.href = "../index.html";
     }
 });
+
