@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player</title>
+  <link rel="stylesheet" href="..\css\styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="../js/models/Player.js"></script>
+  <script type="text/javascript" src="../js/helpers/PlayerParser.js"></script>
+  <script type="text/javascript" src="../js/pages/Players.js"></script>
+  <script src="https://kit.fontawesome.com/d7082065c1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  
+  <h1>Players
+    <button class="navButton" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
+    <button class="navButton" onclick="window.location.href = './Clubs.html';">Club</button>
+    <button class="navButton" onclick="window.location.href = '../Teams.html';">Teams</button>
+    <button class="navButton" onclick="window.location.href = './Coaches.html';">Coaches</button>
+    <button class="navButton" onclick="window.location.href = '../Pitches.html';">Pitches</button>
+  </h1>
+
+  <button class="button" id="addButton" onclick="window.location.href = './PlayerEdit.html';"><i
+      class="fa fa-user-plus"></i></button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</abbr></th>
+        <th>Birthdate</abbr></th>
+        <th>Street</abbr></th>
+        <th>City</abbr></th>
+        <th>Zip</abbr></th>
+        <th>Height (m)</abbr></th>
+        <th>Weight (kg)</abbr></th>
+        <th>Playernumber</abbr></th>
+        <th></abbr></th>
+      </tr>
+    </thead>
+    <tbody id="playerTableBody"></tbody>
+  </table>
+</body>
+
+
+</html>

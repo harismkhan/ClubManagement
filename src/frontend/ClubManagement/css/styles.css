@@ -1,0 +1,241 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+* {
+    font-family: Verdana;
+}
+
+h1 {
+    text-align: left;
+    font-size: calc(40px + (60 - 40) * ((100vw - 320px) / (1600 - 320)));
+    color: rgb(255, 255, 255);
+    background-color: rgb(199, 191, 170);
+    padding: 20px;
+    font-family: fantasy;
+    margin-bottom: 2%;
+}
+
+h2 {
+    margin-left: 15%;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.buttonDiv {
+    align-items: center;
+    text-align: center;
+}
+
+.button {
+    font-size: calc(12px + (24 - 12) * ((100vw - 320px) / (1600 - 320)));
+    padding-inline: 20px;
+    padding-block: auto;
+    border: 2px solid rgb(199, 191, 170);
+    clear: none;
+    transition-duration: 0.4s;
+    margin: calc(2px + (24 - 2) * ((100vw - 320px) / (1600 - 320)));
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: rgb(199, 191, 170);
+}
+.button:hover {
+    background-color: white;
+    border: 2px solid rgb(199, 191, 170);
+    color: rgb(199, 191, 170);
+
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+.select {
+    margin-left: 15%;
+    margin-bottom: 1rem;
+}
+
+.input {
+    margin-left: 15%;
+    width: 70%;
+}
+
+.breadcrumb {
+    margin-left: 0%;
+    font-size: padding;
+    padding-bottom: 2rem;
+    margin-top: 5rem;
+    font-size: calc(12px + (24 - 12) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.table {
+    float: right;
+    margin-right: 5%;
+    width: 90%;
+    font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1600 - 320)));
+}
+
+.delete {
+    margin-top: 8px;
+}
+
+.deleteItem:hover {
+    color: red;
+    transition: 0.2s;
+}
+
+.navButton {
+    float: right;
+    background-color: rgb(199, 191, 170);
+    border: 2px solid rgb(199, 191, 170);
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.4s;
+
+}
+.navButton:hover {
+    transition: 0.4s;
+    background-color: white;
+    border: 2px solid white;
+    color: rgb(199, 191, 170);
+}
+
+.row:hover {
+    cursor: pointer;
+    background-color: rgb(215, 215, 215);
+}
+
+#addButton {
+    float: right;
+    margin-right: 5%;
+    color: rgb(199, 191, 170);
+    background-color: white;
+    font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1600 - 320)));
+    margin-bottom: 2%;
+    margin-top: 0px;
+}
+#addButton:hover {
+    background-color: rgb(199, 191, 170);
+    border: 2px solid rgb(199, 191, 170);
+    color: white
+}
+
+#saveButton {
+    float: right;
+    margin-right: 0px;
+    margin-right: 15%;
+    color: rgb(199, 191, 170);
+    background-color: white;
+}
+#saveButton:hover {
+    background-color: rgb(199, 191, 170);
+    border: 2px solid rgb(199, 191, 170);
+    color: white
+}
+
+#deleteButton {
+    float: right;
+    margin-right: 0px;
+    color: rgb(199, 191, 170);
+    background-color: white;
+}
+#deleteButton:hover {
+    background-color: rgb(248, 87, 38);
+    border: 2px solid rgb(248, 87, 38);
+    color: white
+}
+
+#cancelButton {
+    float: right;
+    margin-right: 0px;
+    color: rgb(199, 191, 170);
+    background-color: white;
+}
+#cancelButton:hover {
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    color: white
+}
+
+th,
+td {
+    padding: 0.25em 0.5em 0.25em 1em;
+    vertical-align: text-top;
+    text-align: left;
+    text-indent: -0.5em;
+}
+
+th {
+    vertical-align: bottom;
+    background-color: rgb(199, 191, 170);
+    color: #fff;
+}
+
+tr:nth-child(even) th[scope=row] {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) th[scope=row] {
+    background-color: #fff;
+}
+
+th:nth-of-type(3),
+td:nth-of-type(3) {
+    text-align: right;
+}
+
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+th[scope=row] {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+th[scope=row] {
+    vertical-align: top;
+    color: inherit;
+    background-color: inherit;
+}
+
+table:nth-of-type(2) th:not([scope=row]):first-child {
+    left: 0;
+    z-index: 3;
+}
+
+th[scope=row]+td {
+    min-width: 24em;
+}
+
+th[scope=row] {
+    min-width: 20em;
+}
