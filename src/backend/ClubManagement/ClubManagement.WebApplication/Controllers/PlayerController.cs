@@ -19,6 +19,11 @@ namespace ClubManagement.WebApplication.Controllers
             this.playerService = playerService;
         }
 
+        public IPlayerService GetPlayerService()
+        {
+            return playerService;
+        }
+
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] PlayerCreateModel playerCreate)
         {
@@ -34,6 +39,7 @@ namespace ClubManagement.WebApplication.Controllers
             }
             return Ok();
         }
+
 
         [HttpPut]
         public async Task<ActionResult> Update(PlayerUpdateModel playerUpdate)

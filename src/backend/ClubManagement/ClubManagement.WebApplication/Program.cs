@@ -14,23 +14,28 @@ var configuration = new ConfigurationBuilder()
     .AddEnvironmentVariables()
     .Build();
 ConfigureServices(builder.Services);
+
 var app = builder.Build();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-app.UseSwagger();
-app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
 app.UseCors(builder =>
 {
-builder.WithOrigins("http://127.0.0.1:5500")
-.AllowAnyMethod()
-.AllowAnyHeader();
+    builder.WithOrigins("https://localhost:7011/","http://127.0.0.1:5500")
+    .AllowAnyMethod()
+    .AllowAnyHeader();
 });
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
 void ConfigureServices(IServiceCollection services)
 {
     services.AddDatabase(configuration);
@@ -49,4 +54,3 @@ void ConfigureServices(IServiceCollection services)
     services.AddScoped<IPlayerService, PlayerService>();
     services.AddScoped<IPitchService, PitchService>();
 }
-

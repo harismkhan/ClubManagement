@@ -1,7 +1,7 @@
 const playersKey = ("clubmanagement.players")
 
 async function onInit() {
-    let playersJson = await PlayerService.getItems() ?? "[]";
+    let playersJson = await PlayerService.getAll() ?? "[]";
     let players = PlayerParser.multipleFromJson(playersJson);
 
     fillTable(players)
@@ -10,31 +10,32 @@ async function onInit() {
 
 function fillTable(players) {
     let tableBody = document.getElementById("playerTableBody");
-tableBody.innerHTML =``;
+    tableBody.innerHTML = '';
 
     for (var i = 0; i < players.length; i++) {
         tableBody.innerHTML += `
-        <tr class="row" >
-            <td class="FirstName" onClick="onRowClick(${players[i].id})">${players[i].firstName}</td>
-            <td class="LastName" onClick="onRowClick(${players[i].id})">${players[i].lastName}</td>
-            <td class="BirthDate" onClick="onRowClick(${players[i].id})">${players[i].birthDate}</td>
-            <td class="Street" onClick="onRowClick(${players[i].id})">${players[i].street}</td>
-            <td class="City" onClick="onRowClick(${players[i].id})">${players[i].city}</td>
-            <td class="Zip" onClick="onRowClick(${players[i].id})">${players[i].zip}</td>
-            <td class="Height" onClick="onRowClick(${players[i].id})">${players[i].height}</td>
-            <td class="Weight" onClick="onRowClick(${players[i].id})">${players[i].weight}</td>
-            <td class="PlayerNumber" onClick="onRowClick(${players[i].id})">${players[i].playerNumber}</td>
-            <td class="deleteItem" onClick="onDelete(${players[i].id})"><i class="fa-solid fa-user-xmark"></i></i></td>
+        <tr class="row" onClick="onRowClick('${players[i].id}');">
+            <td class="firstName">${players[i].firstName}</td>
+            <td class="lastName">${players[i].lastName}</td>
+            <td class="birthDate">${players[i].birthDate}</td>
+            <td class="street">${players[i].street}</td>
+            <td class="city">${players[i].city}</td>
+            <td class="zip">${players[i].zip}</td>
+            <td class="height">${players[i].height}</td>
+            <td class="weight">${players[i].weight}</td>
+            <td class="playerNumber">${players[i].playerNumber}</td>
+            <td class="deleteItem">
+                <i class="fa-solid fa-user-xmark" title ="Delete player"></i>
+            </td>
           </a>
-        </tr>`
-            ;
+        </tr>`;
     }
 }
 
-
 function onRowClick(id) {
-    window.location.href = `./playerEdit.html?id=${id}`;
+    window.location.href = `./PlayerEdit.html?id=${id}`;
 }
+
 function onDelete(id) {
     let playersJson = localStorage.getItem(playersKey) ?? "[]";
     let players = PlayerParser.multipleFromJson(playersJson);
