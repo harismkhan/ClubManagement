@@ -1,4 +1,4 @@
-const playersKey = "clubmanagement.players"
+const playersKey = ("clubmanagement.players")
 
 async function onInit() {
     let playersJson = await PlayerService.getAll() ?? "[]";
