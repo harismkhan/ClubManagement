@@ -2,7 +2,6 @@ const playersKey = "clubmanagement.players"
 
 async function onInit() {
     let id = getIdFromParameters();
-    let player;
     if (id) {
         let player = await PlayerService.getById(id);
         if (player) {

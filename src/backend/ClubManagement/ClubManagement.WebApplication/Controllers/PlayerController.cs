@@ -19,11 +19,6 @@ namespace ClubManagement.WebApplication.Controllers
             this.playerService = playerService;
         }
 
-        public IPlayerService GetPlayerService()
-        {
-            return playerService;
-        }
-
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] PlayerCreateModel playerCreate)
         {
