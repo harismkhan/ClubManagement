@@ -1,5 +1,3 @@
-const playersKey = ("clubmanagement.players")
-
 async function onInit() {
     let playersJson = await PlayerService.getAll() ?? "[]";
     let players = PlayerParser.multipleFromJson(playersJson);
@@ -37,7 +35,6 @@ function onRowClick(id) {
 }
 
 function onDelete(id) {
-    let playersJson = localStorage.getItem(playersKey) ?? "[]";
     let players = PlayerParser.multipleFromJson(playersJson);
     let index = players.findIndex(p => p.id == id);
 

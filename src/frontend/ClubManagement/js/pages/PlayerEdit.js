@@ -1,5 +1,3 @@
-const playersKey = "clubmanagement.players"
-
 async function onInit() {
     let id = getIdFromParameters();
     if (id) {
@@ -63,16 +61,6 @@ function readPlayerFromForm(id){
     return new Player(id, firstName, lastName, birthDate, street, city, zip, height, weight, playerNumber, clubId, teamId);
 }
 
-function getNewId(players) {
-    let highestId = 0;
-    for (var i = 0; i < players.length; i++) {
-        if (players[i].id > highestId) {
-            highestId = players[i].id;
-        }
-    }
-    return highestId + 1;
-}
-
 function onDelete() {
     let id = getIdFromParameters();
 
@@ -86,11 +74,5 @@ setTimeout(async() => {
 document.addEventListener('keydown', function(event){
     if(event.key === "Escape"){
         window.location.href = "./Players.html";
-    }
-});
-
-document.addEventListener('keydown', function (event) {
-    if (event.key === "Enter") {
-        onSave();
     }
 });
