@@ -64,7 +64,7 @@ function readPlayerFromForm(id){
 function onDelete() {
     let id = getIdFromParameters();
 
-    PlayerService.deleteItem(id);
+    await PlayerService.deleteItem(id);
 }
 
 setTimeout(async() => {
