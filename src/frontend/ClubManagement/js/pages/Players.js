@@ -3,7 +3,6 @@ async function onInit() {
     let players = PlayerParser.multipleFromJson(playersJson);
 
     fillTable(players)
-
 }
 
 function fillTable(players) {
@@ -12,18 +11,18 @@ function fillTable(players) {
 
     for (var i = 0; i < players.length; i++) {
         tableBody.innerHTML += `
-        <tr class="row" onClick="onRowClick('${players[i].id}');">
-            <td class="firstName">${players[i].firstName}</td>
-            <td class="lastName">${players[i].lastName}</td>
-            <td class="birthDate">${players[i].birthDate}</td>
-            <td class="street">${players[i].street}</td>
-            <td class="city">${players[i].city}</td>
-            <td class="zip">${players[i].zip}</td>
-            <td class="height">${players[i].height}</td>
-            <td class="weight">${players[i].weight}</td>
-            <td class="playerNumber">${players[i].playerNumber}</td>
+        <tr class="row" >
+            <td onClick="onRowClick('${players[i].id}');" class="firstName">${players[i].firstName}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="lastName">${players[i].lastName}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="birthDate">${players[i].birthDate}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="street">${players[i].street}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="city">${players[i].city}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="zip">${players[i].zip}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="height">${players[i].height}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="weight">${players[i].weight}</td>
+            <td onClick="onRowClick('${players[i].id}');" class="playerNumber">${players[i].playerNumber}</td>
             <td class="deleteItem">
-                <i class="fa-solid fa-user-xmark" title ="Delete player"></i>
+                <button onClick="onDelete('${players[i].id}')" class="fa-solid fa-xmark deleteButton" title ="Delete player"></button>
             </td>
           </a>
         </tr>`;
@@ -34,19 +33,9 @@ function onRowClick(id) {
     window.location.href = `./PlayerEdit.html?id=${id}`;
 }
 
-function onDelete(id) {
-    let players = PlayerParser.multipleFromJson(playersJson);
-    let index = players.findIndex(p => p.id == id);
-
-    if (index === -1) {
-        return;
-    }
-
-    players.splice(index, 1);
-
-    localStorage.setItem(playersKey, JSON.stringify(players));
-
-    window.location.href = "./players.html";
+async function onDelete(id) {
+    await PlayerService.deleteItem(id);
+    await onInit();
 }
 
 setTimeout(async() => {
@@ -58,4 +47,3 @@ document.addEventListener('keydown', function (event) {
         window.location.href = "../index.html";
     }
 });
-

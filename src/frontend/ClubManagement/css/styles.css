@@ -125,6 +125,13 @@ h2 {
     transition: 0.2s;
 }
 
+.deleteButton {
+    color: rgb(255, 55, 55);
+    background-color: white;
+    border: none;
+    font-size: 22px;
+}
+
 #addButton {
     float: right;
     margin-right: 5%;

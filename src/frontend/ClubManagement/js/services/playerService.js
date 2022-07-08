@@ -33,7 +33,6 @@ class PlayerService {
             },
             body: JSON.stringify(id)
         })
-            .then(() => getAll())
             .catch(error => console.error('Unable to delete Player.', error));
     }
 
