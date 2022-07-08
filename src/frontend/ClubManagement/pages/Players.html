@@ -10,41 +10,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script type="text/javascript" src="../js/models/Player.js"></script>
-  <script type="text/javascript" src="../js/helpers/PlayerParser.js"></script>
+  <script type="text/javascript" src="../js/services/playerService.js"></script>
+  <script type="text/javascript" src="../js/helpers/playerParser.js"></script>
   <script type="text/javascript" src="../js/pages/Players.js"></script>
   <script src="https://kit.fontawesome.com/d7082065c1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  
-  <h1>Players
+  <header>
+    <h1>Players
     <button class="navButton" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
     <button class="navButton" onclick="window.location.href = './Clubs.html';">Club</button>
-    <button class="navButton" onclick="window.location.href = '../Teams.html';">Teams</button>
+    <button class="navButton" onclick="window.location.href = './Teams.html';">Teams</button>
     <button class="navButton" onclick="window.location.href = './Coaches.html';">Coaches</button>
-    <button class="navButton" onclick="window.location.href = '../Pitches.html';">Pitches</button>
+    <button class="navButton" onclick="window.location.href = './Pitches.html';">Pitches</button>
   </h1>
-
-  <button class="button" id="addButton" onclick="window.location.href = './PlayerEdit.html';"><i
-      class="fa fa-user-plus"></i></button>
+  </header>
+  <button title="Add new player" class="button" id="addButton" onclick="window.location.href = './PlayerEdit.html';">
+    <i class="fa fa-user-plus"></i> 
+  </button>
   <table class="table">
     <thead>
       <tr>
         <th>Firstname</th>
-        <th>Lastname</abbr></th>
-        <th>Birthdate</abbr></th>
-        <th>Street</abbr></th>
-        <th>City</abbr></th>
-        <th>Zip</abbr></th>
-        <th>Height (m)</abbr></th>
-        <th>Weight (kg)</abbr></th>
-        <th>Playernumber</abbr></th>
-        <th></abbr></th>
+        <th>Lastname</th>
+        <th>Birthdate</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Height (m)</th>
+        <th>Weight (kg)</th>
+        <th>Playernumber</th>
+        <th></th>
       </tr>
     </thead>
     <tbody id="playerTableBody"></tbody>
   </table>
 </body>
-
 
 </html>

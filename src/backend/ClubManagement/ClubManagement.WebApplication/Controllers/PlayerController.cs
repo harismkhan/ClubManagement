@@ -35,6 +35,7 @@ namespace ClubManagement.WebApplication.Controllers
             return Ok();
         }
 
+
         [HttpPut]
         public async Task<ActionResult> Update(PlayerUpdateModel playerUpdate)
         {

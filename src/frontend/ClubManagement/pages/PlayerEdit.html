@@ -9,17 +9,21 @@
   <link rel="stylesheet" href="..\css\styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <script type="text/javascript" src="..\js\services\playerService.js"></script>
   <script type="text/javascript" src="..\js\models\player.js"></script>
-  <script type="text/javascript" src="..\js\helpers\PlayerParser.js"></script>
+  <script type="text/javascript" src="..\js\helpers\playerParser.js"></script>
   <script type="text/javascript" src="..\js\pages\PlayerEdit.js"></script>
   <script src="https://kit.fontawesome.com/d7082065c1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>Edit Player
-    <button class="navButton" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
-    <button class="navButton" onclick="window.location.href = './Players.html';"><i class="fa fa-users"></i> All Players</button>
-  </h1>
+  <header>
+    <h1>Edit Player
+      <button class="navButton" title = "home" onclick="window.location.href = '../index.html';"><i class="fa fa-home"></i> Home</button>
+      <button class="navButton" title = "view all registered Players" onclick="window.location.href = './Players.html';"><i class="fa fa-users"></i> All Players</button>
+    </h1>
+  </header>
+   
   <form id="input">
     <h2>Firstname</h2>
     <input class="input" id="firstName" type="text" />
@@ -43,14 +47,14 @@
     <input class="input" id="clubId" type="text" />
     <h2>TeamId</h2>
     <input class="input" id="teamId" type="text" />
-    <a title="save" class="button" id="saveButton" onclick="onSave()" href="./Players.html">
+    <a title="Save player" class="button" id="saveButton" onclick="onSave()" href="./Players.html">
       <i class="fa fa-bookmark-o"></i>
     </a>
-    <a title="delete" class="button" id="deleteButton" onclick="onDelete()" href="./Players.html">
+    <a title="Delete player" class="button" id="deleteButton" onclick="onDelete()" href="./Players.html" >
       <i class="fa fa-trash-o"></i>
     </a>
-    <a href="./Players.html" title="cancel" class="button" id="cancelButton">
-        <i class="fa-solid fa-xmark"></i>
+    <a title="Cancel entry" class="button" id="cancelButton" href="./Players.html" >
+      <i class="fa-solid fa-xmark"></i>
     </a>
 
   </form>

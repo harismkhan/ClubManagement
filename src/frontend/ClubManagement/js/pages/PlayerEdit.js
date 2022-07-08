@@ -1,14 +1,7 @@
-const playersKey = "clubmanagement.players"
-
-
-function onInit() {
-    let playersJson = localStorage.getItem(playersKey) ?? "[]";
-    let players = PlayerParser.multipleFromJson(playersJson);
-
+async function onInit() {
     let id = getIdFromParameters();
-    let player;
     if (id) {
-        player = players.find(c => c.id == id);
+        let player = await PlayerService.getById(id);
         if (player) {
             fillFormFromPlayer(player);
         }
@@ -33,27 +26,16 @@ function fillFormFromPlayer(player) {
 }
 
 function onSave() {
-    let playersJson = localStorage.getItem(playersKey) ?? "[]";
-    let players = PlayerParser.multipleFromJson(playersJson);
-
     let id = getIdFromParameters();
 
-    let index = -1;
-    if (id) {
-        index = players.findIndex(c => c.id == id);
-    }
-
-    if (index !== -1) {
-        let player = readPlayerFromForm(id);
-        players[index] = player;
+    let player = readPlayerFromForm(id); 
+    
+    if (id != null && id !== ""){
+        PlayerService.updateItem(player);
     }
     else {
-        let player = readPlayerFromForm(getNewId(players));
-        players.push(player);
+        PlayerService.addItem(player);
     }
-
-    localStorage.setItem(playersKey, JSON.stringify(players));
-    window.location.href = "./players.html";
 }
 
 function getIdFromParameters() {
@@ -79,47 +61,18 @@ function readPlayerFromForm(id){
     return new Player(id, firstName, lastName, birthDate, street, city, zip, height, weight, playerNumber, clubId, teamId);
 }
 
-function getNewId(players) {
-    let highestId = 0;
-    for (var i = 0; i < players.length; i++) {
-        if (players[i].id > highestId) {
-            highestId = players[i].id;
-        }
-    }
-    return highestId + 1;
-}
-
-function onDelete() {
-    let playersJson = localStorage.getItem(playersKey) ?? "[]";
-    let players = PlayerParser.multipleFromJson(playersJson);
-
+async function onDelete() {
     let id = getIdFromParameters();
-    if (!!!id) {
-        return;
-    }
 
-    let index = players.findIndex(p => p.id == id);
-    if (index === -1){
-        return;
-    }
-    players.splice(index, 1);
-    localStorage.setItem(playersKey, JSON.stringify(players));
-
-    window.location.href = "./Players.html";
+    await PlayerService.deleteItem(id);
 }
 
-setTimeout(() => {
-    onInit();
+setTimeout(async() => {
+    await onInit();
 }, 1);
 
 document.addEventListener('keydown', function(event){
     if(event.key === "Escape"){
         window.location.href = "./Players.html";
-    }
-});
-
-document.addEventListener('keydown', function (event) {
-    if (event.key === "Enter") {
-        onSave();
     }
 });
