@@ -61,7 +61,7 @@ function readPlayerFromForm(id){
     return new Player(id, firstName, lastName, birthDate, street, city, zip, height, weight, playerNumber, clubId, teamId);
 }
 
-function onDelete() {
+async function onDelete() {
     let id = getIdFromParameters();
 
     await PlayerService.deleteItem(id);
